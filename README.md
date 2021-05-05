@@ -1,24 +1,45 @@
-# README
+# 長野ケーキ　ECサイト
+
+DMM WEBCAMPのチーム開発（本講座では1人）で作成するアプリケーションです。
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## 説明
 
-* Ruby version
+## ER図
 
-* System dependencies
+## アプリケーション詳細設計図
+* 顧客側
 
-* Configuration
+* 管理者側
 
-* Database creation
+## 機能
 
-* Database initialization
+# 開発環境
+Ruby on Rails
 
-* How to run the test suite
+## インストール
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ git clone https://github.com/TakahiroMashiko/nagano_cake
+$ cd nagano_cake
+$ sh setup.sh
+$ ~do anything~
+```
 
-* Deployment instructions
+# 推薦環境
+Ruby 2.5 以降 Rails 5.2 以降
 
-* ...
+# 開発者
+## チーム名
+Takahiro Mashiko  
+https://github.com/TakahiroMashiko
+
+## メンバー
+* Takahiro Mashiko  
+https://github.com/TakahiroMashiko
+
+# 作成期間
+2020/5/3~2020/5/30予定  
+※作成中
