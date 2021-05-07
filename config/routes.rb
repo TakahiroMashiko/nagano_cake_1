@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resource :home, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
     get  'top'=>'homes#top'
+    ## コントローラー作成時に併せて生成されたルーティング、最後に削除する
     # get 'order_details/update'
     # get 'orders/index'
     # get 'orders/update'
