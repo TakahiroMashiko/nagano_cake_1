@@ -69,3 +69,7 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 
 # Install refile-mini_magick
 gem "refile-mini_magick"
+
+# Install bootstrap
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
