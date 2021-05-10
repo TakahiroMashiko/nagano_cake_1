@@ -24,6 +24,9 @@
                 <%= item.name %>
               <% end %>
             </td>
+            <td>
+              <%= product.price.to_s(:delimited) %>
+            </td>
           </tr>
         <% end %>
       </tbody>
