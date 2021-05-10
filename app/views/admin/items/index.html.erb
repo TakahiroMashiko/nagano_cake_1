@@ -13,6 +13,15 @@
           <!-- 任意実装<th>販売ステータス</th>-->
         </tr>
       </thead>
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td>
+              <%= item.id %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
   <div><%= paginate(@items) %></div>
