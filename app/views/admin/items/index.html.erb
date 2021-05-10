@@ -19,6 +19,11 @@
             <td>
               <%= item.id %>
             </td>
+            <td>
+              <%= link_to admin_item_path(item) do %>
+                <%= item.name %>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
