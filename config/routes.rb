@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :customers, only: [:index, :show, :edit, :update]
       resources :items, only: [:index, :new, :create, :show, :edit, :update,]
       resources :orders, only: [:index, :show, :update]
+      resource :order_details, only: [:update]
   end
 
   # customer
