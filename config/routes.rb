@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :home, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
     get  'top'=>'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
+    resources :items, only: [:index, :new, :create, :show, :edit, :update,]
   end
 
   # customer
