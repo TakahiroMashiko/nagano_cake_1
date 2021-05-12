@@ -1,2 +1,36 @@
-<h1>Admin::Items#edit</h1>
-<p>Find me in app/views/admin/items/edit.html.erb</p>
+<h2>商品編集</h2>
+<div>
+  <!--部分テンプレート化する-->
+  <!-- form_with -->
+  <%= form_with model: @item, local: true do |f| %>
+    <div>
+      <div class="img.field"></div>
+    </div>
+    <div>
+      <div>
+        <%= f.label :"商品名" %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :"商品説明" %>
+        <%= f.text_area :introduction %>
+      </div>
+      <!--任意実装-->
+      <!--<div>-->
+      <!--  < %= f.label :"ジャンル" %>-->
+      <!--</div>-->
+      <div>
+        <%= f.label :"税抜価格" %>
+        <%= f.text_field :price %>円
+      </div>
+      <!--任意実装-->
+      <!--<div>-->
+      <!--  < %= f.label :"販売ステータス" %>-->
+      <!--</div>-->
+      <div>
+        <%= f.submit "変更を保存" %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
