@@ -8,6 +8,10 @@
       <div class="img.field"></div>
     </div>
     <div>
+      <%= f.label :"商品画像" %>
+      <%= f.attachment_field :image %>
+    </div>
+    <div>
       <div>
         <%= f.label :"商品名" %>
         <%= f.text_field :name %>
