@@ -33,6 +33,13 @@
         <%= f.label "電話番号" %>
         <%= f.text_field :telephone_number %>
       </div>
+      <div>
+        <%= f.label "会員ステータス" %>
+        <%= f.radio_button :is_active, true %>
+        <%= f.label "有効", value: :true %>
+        <%= f.radio_button :is_active, false %>
+        <%= f.label "退会", value: :false %>
+      </div>
     </div>
   <% end %>
   </div>
