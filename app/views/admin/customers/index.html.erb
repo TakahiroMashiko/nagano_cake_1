@@ -24,6 +24,10 @@
             <td>
               <%= customer.email %>
             </td>
+            <td>
+              <% if customer.is_active == true %>
+                <p>退会済み</p>
+            </td>
           </tr>
       </tbody>
     </table>
