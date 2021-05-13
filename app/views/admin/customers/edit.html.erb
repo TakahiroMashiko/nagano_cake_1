@@ -6,7 +6,12 @@
     </h2>
 
   <%= form_with model: @customer, lacal: true do |f| %>
-
+    <div>
+      <div>
+        <%= f.label :"会員ID" %>
+        <%= f.label :"#{@customer.id}" %>
+      </div>
+    </div>
   <% end %>
   </div>
 </div>
