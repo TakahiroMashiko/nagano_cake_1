@@ -60,7 +60,11 @@
 
       <tbody>
         <%= @order_details.each do |order_detail| %>
-
+          <tr>
+            <td>
+              <%= order_detail.item.name %>
+            </td>
+          </tr>
         <% end %>
       </tbody>
     </div>
