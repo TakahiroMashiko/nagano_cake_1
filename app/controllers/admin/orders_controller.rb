@@ -3,6 +3,10 @@ class Admin::OrdersController < ApplicationController
     @orders = Order.all.page(params[:page]).per(10)
   end
 
+  def show
+
+  end
+
   def update
     @order = order.find(params[:id])
     if @order.update(order_params)
