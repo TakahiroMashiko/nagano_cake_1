@@ -11,6 +11,9 @@
       <!--When the customer is logged in-->
       <% if customer_sign_in? %>
 
+      <!--When the admin is logged in-->
+      <% elsif admin_signed_in? %>
+
       <% end %>
     </ul>
   </nav>
