@@ -8,6 +8,7 @@ class Admin::ItemsController < ApplicationController
   end
 
   def create
+    @item = Item.new(item_params)
   end
 
   def show
