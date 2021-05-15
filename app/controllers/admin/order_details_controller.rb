@@ -8,4 +8,8 @@ class Admin::OrderDetailsController < ApplicationController
       render "update"
     end
   end
+
+  # Strong parameters
+  private
+
 end
