@@ -34,4 +34,7 @@ class Admin::ItemsController < ApplicationController
 
   # Strong parameters
   private
+  def item_params(:item).permit(:genre_id, :name, :image_id, :introduction, :price, :is_active)
+
+  end
 end
