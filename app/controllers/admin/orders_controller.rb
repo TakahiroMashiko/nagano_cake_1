@@ -6,6 +6,7 @@ class Admin::OrdersController < ApplicationController
   def update
     @order = order.find(params[:id])
     if @order.update(order_params)
+      flash[:success] = "注文ステータスを変更しました"
 
     end
   end
