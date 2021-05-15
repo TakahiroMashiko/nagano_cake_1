@@ -4,5 +4,6 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
+    @order = order.find(params[:id])
   end
 end
