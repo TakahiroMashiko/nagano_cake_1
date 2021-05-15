@@ -25,7 +25,7 @@ class Admin::ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-
+      flash[:success] = "商品内容を変更しました"
     end
   end
 end
