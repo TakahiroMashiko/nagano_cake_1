@@ -64,6 +64,9 @@
             <td>
               <%= order_detail.item.name %>
             </td>
+            <td>
+              ¥<%= total_payment(order_detail.item.price).to_s(:delimited) %>
+            </td>
           </tr>
         <% end %>
       </tbody>
