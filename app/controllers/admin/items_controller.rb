@@ -24,5 +24,8 @@ class Admin::ItemsController < ApplicationController
   end
 
   def update
+    if @item.update(item_params)
+
+    end
   end
 end
