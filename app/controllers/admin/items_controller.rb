@@ -28,7 +28,7 @@ class Admin::ItemsController < ApplicationController
       flash[:success] = "商品内容を変更しました"
       redirect_to admin_item_path(@item)
     else
-
+      render :edit
     end
   end
 end
