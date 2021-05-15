@@ -8,6 +8,8 @@ class Admin::OrdersController < ApplicationController
     if @order.update(order_params)
       flash[:success] = "注文ステータスを変更しました"
       redirect_to admin_order_path(@order)
+    else
+      render "update"
     end
   end
 end
