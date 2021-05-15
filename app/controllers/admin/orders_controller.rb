@@ -12,7 +12,10 @@ class Admin::OrdersController < ApplicationController
       render "update"
     end
   end
-  
+
   # Strong parameters
   private
+  def order_params
+
+  end
 end
