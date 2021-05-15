@@ -31,4 +31,7 @@ class Admin::ItemsController < ApplicationController
       render :edit
     end
   end
+
+  # Strong parameters
+  private
 end
