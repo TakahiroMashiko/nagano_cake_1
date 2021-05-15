@@ -16,6 +16,6 @@ class Admin::OrdersController < ApplicationController
   # Strong parameters
   private
   def order_params
-
+    params.require(:order).permit(:customer_id, :total_payment, :order_status)
   end
 end
