@@ -1,6 +1,9 @@
 <header>
   <nav>
     <% if admin_signed_in? %>
-    <%= link_to "NaganoCake", admin_top_path %>
+      <%= link_to "NaganoCake", admin_top_path %>
+    <% else %>
+
+    <% end %>
   </nav>
 </header>
