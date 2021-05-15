@@ -13,7 +13,11 @@
 
       <tbody>
         <% @orders.each do |order| %>
-
+          <tr>
+            <td>
+              <%= link_to admin_order_path(:order) do %>
+            </td>
+          </tr>
         <% end %>
       </tbody>
     </table>
