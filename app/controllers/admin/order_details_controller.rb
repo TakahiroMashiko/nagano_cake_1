@@ -11,5 +11,7 @@ class Admin::OrderDetailsController < ApplicationController
 
   # Strong parameters
   private
+  def order_detail_params
 
+  end
 end
