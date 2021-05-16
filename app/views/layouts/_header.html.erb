@@ -3,21 +3,23 @@
     <% if admin_signed_in? %>
       <%= link_to "NaganoCake", admin_top_path %>
     <% else %>
-      <%= link_to "NaganoCake", root_path %>
+      <!--エラーが発生したためコメントアウト-->
+      <!--< %= link_to "NaganoCake", root_path %>-->
     <% end %>
   </nav>
   <nav>
     <ul>
       <!--When the customer is logged in-->
-      <% if customer_sign_in? %>
+      <!--< % if customer_sign_in? %>-->
 
       <!--When the admin is logged in-->
-      <% elsif admin_signed_in? %>
+      <!--if customer_sign_in?を実装後にelsifに修正する-->
+      <% if admin_signed_in? %>
         <li>
           <%= link_to "商品一覧", admin_items_path %>
         </li>
         <li>
-          <%= link_to "会員一覧", admin_customer_path %>
+          <%= link_to "会員一覧", admin_customers_path %>
         </li>
         <li>
           <%= link_to "注文履歴一覧", admin_orders_path %>
@@ -33,7 +35,8 @@
         <!--When the customer is not logged in-->
         <% else %>
         <li>
-          <%= link_to "商品一覧", items_path %>
+          <!--パスは後ほど記載する-->
+          <%= link_to "商品一覧" %>
         </li>
         <li>
           <!--パスは後ほど記載する-->
