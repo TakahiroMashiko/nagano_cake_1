@@ -1,9 +1,9 @@
 <header>
-  <nav>
+  <nav class="nav navbar-nav navbar-left title">
     <% if admin_signed_in? %>
-      <%= link_to "NaganoCake", admin_top_path %>
+      <%= link_to "NaganoCake", admin_top_path # fontawesomeでロゴを入れる %>
     <% else %>
-      <%= link_to "NaganoCake", root_path %>
+      <%= link_to "NaganoCake", root_path # fontawesomeでロゴを入れる %>
     <% end %>
   </nav>
   <nav>
