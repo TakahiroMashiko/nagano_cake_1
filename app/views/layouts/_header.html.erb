@@ -2,10 +2,10 @@
   <nav class="nav navbar-nav navbar-left title">
     <% if admin_signed_in? %>
       <!--fontawesomeでロゴを入れる-->
-      <%= link_to "NaganoCake", admin_top_path  %>
+      <%= link_to "NaganoCake", admin_top_path %>
     <% else %>
       <!--fontawesomeでロゴを入れる-->
-      <%= link_to "NaganoCake", root_path  %>
+      <%= link_to "NaganoCake", root_path %>
     <% end %>
   </nav>
   <nav>
@@ -17,35 +17,35 @@
       <!--if customer_sign_in?を実装後にelsifに修正する-->
       <% if admin_signed_in? %>
         <li class="header-name">
-          <%= link_to "商品一覧", admin_items_path %>
+          <%= link_to "商品一覧", admin_items_path, class: "header_btn" %>
         </li>
         <li>
-          <%= link_to "会員一覧", admin_customers_path %>
+          <%= link_to "会員一覧", admin_customers_path, class: "header_btn" %>
         </li>
         <li>
-          <%= link_to "注文履歴一覧", admin_orders_path %>
+          <%= link_to "注文履歴一覧", admin_orders_path, class: "header_btn" %>
         </li>
         <li>
           <!--任意実装-->
           <!--< %= link_to "ジャンル一覧", admin_genres_path %>-->
         </li>
         <li>
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "header_btn" %>
         </li>
 
         <!--When the customer is not logged in-->
         <% else %>
         <li>
           <!--パスは後ほど記載する-->
-          <%= link_to "商品一覧" %>
+          <%= link_to "商品一覧", class: "header_btn" %>
         </li>
         <li>
           <!--パスは後ほど記載する-->
-          <%= link_to "新規登録" %>
+          <%= link_to "新規登録", class: "header_btn" %>
         </li>
         <li>
           <!--パスは後ほど記載する-->
-          <%= link_to "ログイン" %>
+          <%= link_to "ログイン", class: "header_btn" %>
         </li>
       <% end %>
     </ul>
