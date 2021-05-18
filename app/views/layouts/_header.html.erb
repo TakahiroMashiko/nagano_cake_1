@@ -17,7 +17,7 @@
       <!--if customer_sign_in?を実装後にelsifに修正する-->
       <% if admin_signed_in? %>
         <li class="header-name">
-          <%= link_to "商品一覧", admin_items_path, class: "header_btn" %>
+          <%= link_to "商品一覧", admin_items_path, class= "header_btn" %>
         </li>
         <li>
           <%= link_to "会員一覧", admin_customers_path, class: "header_btn" %>
