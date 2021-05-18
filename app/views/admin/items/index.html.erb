@@ -5,7 +5,7 @@
     新規商品登録
     <table class="table table-hover table-bordered table-condensed">
       <thead>
-        <tr>
+        <tr class="info">
           <th>商品ID</th>
           <th>商品名</th>
           <th>税抜価格</th>
@@ -16,7 +16,7 @@
       <tbody>
         <% @items.each do |item| %>
           <tr>
-            <td>
+            <td class="info clo-xs-1">
               <%= item.id %>
             </td>
             <td>
