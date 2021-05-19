@@ -1,53 +1,69 @@
 <header>
-  <nav class="nav navbar-nav navbar-left title">
+  <nav class="navbar navbar-expand-lg navbar-light bg-">
+    <div class="container">
     <% if admin_signed_in? %>
       <!--fontawesomeでロゴを入れる-->
-      <%= link_to "NaganoCake", admin_top_path %>
+      <%= link_to "NaganoCake", admin_top_path, class: "navbar-brand" %>
     <% else %>
       <!--fontawesomeでロゴを入れる-->
-      <%= link_to "NaganoCake", root_path %>
+      <%= link_to "NaganoCake", root_path, class: "navbar-brand" %>
     <% end %>
-  </nav>
-  <nav>
-    <ul class="nav navbar-nav navbar-right">
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+    <!--<ul class="nav navbar-nav navbar-right">-->
       <!--When the customer is logged in-->
       <!--< % if customer_sign_in? %>-->
 
       <!--When the admin is logged in-->
       <!--if customer_sign_in?を実装後にelsifに修正する-->
       <% if admin_signed_in? %>
-        <li class="header-name">
-          <%= link_to "商品一覧", admin_items_path, class= "header_btn" %>
+        <li>
+          <!--When the customer is not logged in の部分を参考に修正する-->
+          <%= link_to "商品一覧", admin_items_path, class: 'btn btn-outline-light text-light' %>
         </li>
         <li>
-          <%= link_to "会員一覧", admin_customers_path, class: "header_btn" %>
+          <!--When the customer is not logged in の部分を参考に修正する-->
+          <%= link_to "会員一覧", admin_customers_path, class: 'btn nav-link text-light' %>
         </li>
         <li>
-          <%= link_to "注文履歴一覧", admin_orders_path, class: "header_btn" %>
+          <!--When the customer is not logged in の部分を参考に修正する-->
+          <%= link_to "注文履歴一覧", admin_orders_path, class: 'btn nav-link text-light' %>
         </li>
         <li>
           <!--任意実装-->
           <!--< %= link_to "ジャンル一覧", admin_genres_path %>-->
         </li>
         <li>
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "header_btn" %>
+          <!--When the customer is not logged in の部分を参考に修正する-->
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
         </li>
 
         <!--When the customer is not logged in-->
         <% else %>
+
         <li>
           <!--パスは後ほど記載する-->
-          <%= link_to "商品一覧", class: "header_btn" %>
+          <button type="button" class="btn btn-outline-secondary mx-4">
+            <%= link_to "商品一覧", admin_items_path, class: 'text-dark'%>
+          </button>
         </li>
         <li>
           <!--パスは後ほど記載する-->
-          <%= link_to "新規登録", class: "header_btn" %>
+         <button type="button" class="btn btn-outline-secondary mx-4">
+            <%= link_to "新規登録", new_admin_registration_path, class: 'text-dark' %>
+          </button>
         </li>
         <li>
           <!--パスは後ほど記載する-->
-          <%= link_to "ログイン", class: "header_btn" %>
+         <button type="button" class="btn btn-outline-secondary mx-4">
+            <%= link_to "ログイン", new_admin_session_path, class: 'text-dark' %>
+          </button>
         </li>
+
       <% end %>
-    </ul>
+      </ul>
+    </div>
+    </div>
   </nav>
 </header>
