@@ -45,17 +45,20 @@
           <li>
             <!--パスは後ほど記載する-->
             <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "About", class: 'text-dark'%>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mx-4">
               <%= link_to "商品一覧", admin_items_path, class: 'text-dark'%>
             </button>
           </li>
           <li>
-            <!--パスは後ほど記載する-->
            <button type="button" class="btn btn-outline-secondary mx-4">
               <%= link_to "新規登録", new_admin_registration_path, class: 'text-dark' %>
             </button>
           </li>
           <li>
-            <!--パスは後ほど記載する-->
            <button type="button" class="btn btn-outline-secondary mx-4">
               <%= link_to "ログイン", new_admin_session_path, class: 'text-dark' %>
             </button>
