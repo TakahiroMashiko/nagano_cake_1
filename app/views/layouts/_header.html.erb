@@ -18,15 +18,15 @@
       <% if admin_signed_in? %>
         <li>
           <!--When the customer is not logged in の部分を参考に修正する-->
-          <%= link_to "商品一覧", admin_items_path, class: 'btn btn-outline-light text-light' %>
+          <%= link_to "商品一覧", admin_items_path, class: 'text-dark' %>
         </li>
         <li>
           <!--When the customer is not logged in の部分を参考に修正する-->
-          <%= link_to "会員一覧", admin_customers_path, class: 'btn nav-link text-light' %>
+          <%= link_to "会員一覧", admin_customers_path, class: 'text-dark' %>
         </li>
         <li>
           <!--When the customer is not logged in の部分を参考に修正する-->
-          <%= link_to "注文履歴一覧", admin_orders_path, class: 'btn nav-link text-light' %>
+          <%= link_to "注文履歴一覧", admin_orders_path, class: 'text-dark' %>
         </li>
         <li>
           <!--任意実装-->
@@ -34,7 +34,7 @@
         </li>
         <li>
           <!--When the customer is not logged in の部分を参考に修正する-->
-          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-light' %>
+          <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'text-dark' %>
         </li>
 
         <!--When the customer is not logged in-->
