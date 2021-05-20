@@ -1,38 +1,106 @@
-<h2>注文履歴一覧</h2>
+<h2>注文履歴詳細</h2>
 <div>
   <div>
-    <table>
-      <thead>
-        <tr>
-          <th>購入日時</th>
-          <th>購入者</th>
-          <th>注文個数</th>
-          <th>注文ステータス</th>
-        </tr>
-      </thead>
+    <div>
+      <div>
+        <div>
+          購入者
+        </div>
+        <div>
+          <%= @order.name %>
+        </div>
+      </div>
 
-      <tbody>
-        <% @orders.each do |order| %>
+      <div>
+        <div>
+          注文日
+        </div>
+        <div>
+          <%= @order.created_at %>
+        </div>
+      </div>
+
+      <div>
+        <div>
+          配送先
+        </div>
+        <div>
+          <!--発送先郵便番号、住所、宛名を組み合わせて表示させたいが実装方法が不明のため後ほど実装する-->
+          <!--配送先 < %= shipping_postal_code + shipping_address + shipping_name %>-->
+        </div>
+      </div>
+
+      <div>
+        <div>
+          支払方法
+        </div>
+        <div>
+          <%= @order.payment_method %>
+        </div>
+      </div>
+
+      <!--任意実装-->
+      <!--<div>-->
+      <!--  注文ステータス-->
+      <!--</div>-->
+    </div>
+
+    <div>
+      <table>
+        <thead>
           <tr>
-            <td>
-              <%= link_to admin_order_path(:order) do %>
-                <% order.created_at %>
-              <% end %>
-            </td>
-            <td>
-              <!--フルネーム(姓名)で表示させたいが実装方法が不明のため後ほど実装する-->
-              <!--氏名 < %= customer.last_name + customer.first_name %>-->
-            </td>
-            <td>
-              <%= order.order_details.count %>
-            </td>
-            <td>
-              <%= order.order_status %>
-            </td>
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>製作ステータス</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          <%= @order_details.each do |order_detail| %>
+            <tr>
+              <td>
+                <%= order_detail.item.name %>
+              </td>
+              <td>
+                ¥<%= total_payment(order_detail.item.price).to_s(:delimited) %>
+              </td>
+              <td>
+                <%= order_detail.amount %>
+              </td>
+              <td>
+                ¥<%= price(order_detail).to_s(:delimited) %>
+              </td>
+              <td>
+               <!--任意実装-->
+               <!--製作ステータス-->
+              </td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <table>
+        <tr>
+          <th>商品合計</th>
+          <td>¥<%= price(@order_detail).to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <th>送料</th>
+          <td>¥<%= @order.shipping_cost.to_s(:delimited) %></td>
+        </tr>
+        <tr>
+          <th>請求金額合計</th>
+          <td>
+            <!--商品合計と送料を合算して表示させたいが実装方法が不明のため後ほど実装する-->
+            <!--請求金額合計 < %= price + shipping_cost %>-->
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
-  <div><%= paginate(@orders) %></div>
 </div>
