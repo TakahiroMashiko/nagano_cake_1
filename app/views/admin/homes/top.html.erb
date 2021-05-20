@@ -1,4 +1,4 @@
-<h2 class="head-line title_h2 text-center">管理者画面</h2>
+<h2 class="head-line title_h2 text-center">注文履歴一覧</h2>
   <div class="row">
     <div>
       <div>
@@ -35,7 +35,8 @@
             </tbody>
           </table>
         </div>
-      <div><%= paginate(@orders) %></div>
+      <!--kaminari実装後に「.page(params[:page]).per(10)」を記載-->
+      <!--<div>< %= paginate(@orders) %></div>-->
     </div>
   </div>
 </div>
