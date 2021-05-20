@@ -6,66 +6,63 @@
     <% else %>
       <%= link_to " NaganoCake", root_path, class: "fas fa-birthday-cake text-body" %>
     <% end %>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--When the customer is logged in-->
+        <!--< % if customer_sign_in? %>-->
 
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ml-auto">
-    <!--<ul class="nav navbar-nav navbar-right">-->
-      <!--When the customer is logged in-->
-      <!--< % if customer_sign_in? %>-->
+        <!--When the admin is logged in-->
+        <!--if customer_sign_in?を実装後にelsifに修正する-->
+        <% if admin_signed_in? %>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "商品一覧", admin_items_path, class: 'text-dark' %>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "会員一覧", admin_customers_path, class: 'text-dark' %>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "注文履歴一覧", admin_orders_path, class: 'text-dark' %>
+            </button>
+          </li>
+          <!--任意実装-->
+          <!--<li>-->
+            <!--< %= link_to "ジャンル一覧", admin_genres_path %>-->
+          <!--</li>-->
+          <li>
+            <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'text-dark' %>
+            </button>
+          </li>
 
-      <!--When the admin is logged in-->
-      <!--if customer_sign_in?を実装後にelsifに修正する-->
-      <% if admin_signed_in? %>
-        <li>
-          <button type="button" class="btn btn-outline-secondary mx-4">
-            <%= link_to "商品一覧", admin_items_path, class: 'text-dark' %>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn btn-outline-secondary mx-4">
-            <%= link_to "会員一覧", admin_customers_path, class: 'text-dark' %>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="btn btn-outline-secondary mx-4">
-            <%= link_to "注文履歴一覧", admin_orders_path, class: 'text-dark' %>
-          </button>
-        </li>
-        <!--任意実装-->
-        <!--<li>-->
-          <!--< %= link_to "ジャンル一覧", admin_genres_path %>-->
-        <!--</li>-->
-        <li>
-          <button type="button" class="btn btn-outline-secondary mx-4">
-            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'text-dark' %>
-          </button>
-        </li>
-
-        <!--When the customer is not logged in-->
-        <% else %>
-
-        <li>
-          <!--パスは後ほど記載する-->
-          <button type="button" class="btn btn-outline-secondary mx-4">
-            <%= link_to "商品一覧", admin_items_path, class: 'text-dark'%>
-          </button>
-        </li>
-        <li>
-          <!--パスは後ほど記載する-->
-         <button type="button" class="btn btn-outline-secondary mx-4">
-            <%= link_to "新規登録", new_admin_registration_path, class: 'text-dark' %>
-          </button>
-        </li>
-        <li>
-          <!--パスは後ほど記載する-->
-         <button type="button" class="btn btn-outline-secondary mx-4">
-            <%= link_to "ログイン", new_admin_session_path, class: 'text-dark' %>
-          </button>
-        </li>
-
-      <% end %>
-      </ul>
-    </div>
+          <!--When the customer is not logged in-->
+          <% else %>
+          <li>
+            <!--パスは後ほど記載する-->
+            <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "商品一覧", admin_items_path, class: 'text-dark'%>
+            </button>
+          </li>
+          <li>
+            <!--パスは後ほど記載する-->
+           <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "新規登録", new_admin_registration_path, class: 'text-dark' %>
+            </button>
+          </li>
+          <li>
+            <!--パスは後ほど記載する-->
+           <button type="button" class="btn btn-outline-secondary mx-4">
+              <%= link_to "ログイン", new_admin_session_path, class: 'text-dark' %>
+            </button>
+          </li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
