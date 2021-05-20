@@ -1,7 +1,6 @@
 class Admin::HomesController < ApplicationController
+  # kaminari実装後に「.page(params[:page]).per(10)」を記載
   def top
-    ## 後でコメントアウトを解除する
-    # now = Time.current
-    # @orders = order.where(created_at: now.all_day)
+    @orders = Order.all
   end
 end
