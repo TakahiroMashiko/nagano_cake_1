@@ -7,43 +7,39 @@
 </div>
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1">
-    <div>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>購入日時</th>
-              <th>購入者</th>
-              <th>注文個数</th>
-              <!--任意実装-->
-              <!--<th>注文ステータス</th>-->
-            </tr>
-          </thead>
-          <tbody>
-            <% @orders.each do |order| %>
-              <tr>
-                <td>
-                  <%= link_to admin_order_path(:order) do %>
-                    <% order.created_at %>
-                  <% end %>
-                </td>
-                <td>
-                  <!--フルネーム(姓名)で表示させたいが実装方法が不明のため後ほど実装する-->
-                  <!--氏名 < %= customer.last_name + customer.first_name %>-->
-                </td>
-                <td>
-                  <%= order.order_details.count %>
-                </td>
-                <td>
-                  <%= order.order_status %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+    <table>
+       <thead>
+        <tr>
+          <th>購入日時</th>
+          <th>購入者</th>
+          <th>注文個数</th>
+          <!--任意実装-->
+          <!--<th>注文ステータス</th>-->
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td>
+              <%= link_to admin_order_path(:order) do %>
+                <% order.created_at %>
+              <% end %>
+            </td>
+            <td>
+              <!--フルネーム(姓名)で表示させたいが実装方法が不明のため後ほど実装する-->
+              <!--氏名 < %= customer.last_name + customer.first_name %>-->
+            </td>
+            <td>
+              <%= order.order_details.count %>
+            </td>
+            <td>
+              <%= order.order_status %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
       <!--kaminari実装後にコメントアウトを解除する-->
       <!--<div>< %= paginate(@orders) %></div>-->
-    </div>
   </div>
 </div>
