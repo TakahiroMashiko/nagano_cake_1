@@ -1,37 +1,51 @@
-<h2 class="head-line title_h2 text-center admin_product_index">商品一覧</h2>
 <div class="container">
-<div class="row">
-  <div class="col-xs-10 col-xs-offset-1">
-    新規商品登録
-    <table class="table table-hover table-bordered table-condensed">
-      <thead>
-        <tr class="info">
-          <th>商品ID</th>
-          <th>商品名</th>
-          <th>税抜価格</th>
-          <!-- 任意実装<th>ジャンル</th>-->
-          <!-- 任意実装<th>販売ステータス</th>-->
-        </tr>
-      </thead>
-      <tbody>
-        <% @items.each do |item| %>
-          <tr>
-            <td class="info clo-xs-1">
-              <%= item.id %>
-            </td>
-            <td class="text-left">
-              <%= link_to admin_item_path(item), class: "btn-link" do %>
-                <%= item.name %>
-              <% end %>
-            </td>
-            <td class="text-right col-xs-1">
-              ¥<%= item.price.to_s(:delimited) %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">商品一覧</h2>
+    </div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3">
+      <%= link_to new_admin_item_path, class: "btn btn-light pull-right new_product" do %>
+      <i class="fas fa-plus"></i>
+    <% end %>
+    </div>
   </div>
-  <div class="text-center"><%= paginate(@items) %></div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <br>
+      <table class="table table-hover table-bordered table-condensed bg-light">
+        <thead>
+          <tr class="info">
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+            <!-- 任意実装<th>ジャンル</th>-->
+            <!-- 任意実装<th>販売ステータス</th>-->
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <td class="info clo-xs-1">
+                <%= item.id %>
+              </td>
+              <td class="text-left">
+                <%= link_to admin_item_path(item), class: "btn-link" do %>
+                  <%= item.name %>
+                <% end %>
+              </td>
+              <td class="text-right col-xs-1">
+                ¥<%= item.price.to_s(:delimited) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center"><%= paginate(@items) %></div>
   </div>
 </div>
