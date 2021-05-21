@@ -1,15 +1,15 @@
-<div>
+<div class="container">
   <div>
     <h2>商品新規登録</h2>
     <!--部分テンプレート化する-->
     <!-- form_with -->
-    <%= form_with model: @item, local: true do |f| %>
+    <%= form_with model: [:admin, @item], local: true do |f| %>
     <div>
       <div class="img.field"></div>
     </div>
     <div>
       <%= f.label :"商品画像" %>
-      <%= f.attachment_field :image %>
+      <%= f.attachment_field :image, class:"image" %>
     </div>
     <div>
       <div>
