@@ -19,18 +19,17 @@
               <%= item.id %>
             </td>
             <td class="text-left">
-              <%= link_to admin_item_path(item) class: "btn-link" do %>
+              <%= link_to admin_item_path(item), class: "btn-link" do %>
                 <%= item.name %>
               <% end %>
             </td>
             <td class="text-right col-xs-1">
-              ¥<%= product.price.to_s(:delimited) %>
+              ¥<%= item.price.to_s(:delimited) %>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-  <!--kaminari実装後にコメントアウトを解除する-->
-  <!--<div class="text-center">< %= paginate(@items) %></div>-->
+  <div class="text-center"><%= paginate(@items) %></div>
 </div>
