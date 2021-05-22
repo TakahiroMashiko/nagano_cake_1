@@ -1,9 +1,15 @@
-<h2>商品編集</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">商品編集</h2>
+    </div>
+  </div>
+</div>
 <div>
   <!--部分テンプレート化する、商品編登録画面と同じ-->
   <!-- form_with -->
   <%= form_with model: [:admin, @item], local: true do |f| %>
-        <br>
+    <br>
     <div class="container">
       <div class="form-inline mb-2">
         <%= f.label :"商品画像", class:"col-sm-3" %>
