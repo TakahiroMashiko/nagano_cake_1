@@ -1,4 +1,10 @@
-<h2>会員一覧</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <h2 class="head-line title_h2 text-center bg-light">会員一覧</h2>
+    </div>
+  </div>
+</div>
 <div>
   <div>
     <table>
@@ -28,7 +34,7 @@
               <% if customer.is_active == true %>
                 <p>有効</p>
               <% else %>
-                <p>効</p>
+                <p>無効</p>
               <% end %>
             </td>
           </tr>
