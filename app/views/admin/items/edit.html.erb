@@ -2,7 +2,7 @@
 <div>
   <!--部分テンプレート化する-->
   <!-- form_with -->
-  <%= form_with model: @item, local: true do |f| %>
+  <%= form_with model: [:admin, @item], local: true do |f| %>
     <div>
       <div class="img.field"></div>
     </div>
