@@ -3,36 +3,42 @@
   <!--部分テンプレート化する-->
   <!-- form_with -->
   <%= form_with model: [:admin, @item], local: true do |f| %>
-    <div>
-      <div class="img.field"></div>
-    </div>
-    <div>
-      <%= f.label :"商品画像" %>
-      <%= f.attachment_field :image %>
-    </div>
-    <div>
-      <div>
-        <%= f.label :"商品名" %>
-        <%= f.text_field :name %>
+        <br>
+    <div class="container">
+      <div class="form-inline mb-2">
+        <%= f.label :"商品画像", class:"col-sm-3" %>
+        <%= f.attachment_field :image, class:"image col-sm-9" %>
       </div>
-      <div>
-        <%= f.label :"商品説明" %>
-        <%= f.text_area :introduction %>
+      <div class="form-inline mb-2">
+        <%= f.label :"商品名", class:"col-sm-3" %>
+        <%= f.text_field :name, class:"col-sm-9" %>
+      </div>
+      <!--余力があれば縦幅(row)を変更する-->
+      <div class="form-inline mb-2">
+        <%= f.label :"商品説明", class:"col-sm-3" %>
+        <%= f.text_area :introduction, class:"col-sm-9" %>
       </div>
       <!--任意実装-->
       <!--<div>-->
       <!--  < %= f.label :"ジャンル" %>-->
       <!--</div>-->
-      <div>
-        <%= f.label :"税抜価格" %>
-        <%= f.text_field :price %>円
+      <div class="form-inline mb-2">
+        <div class="com-sm-2"></div>
+        <%= f.label :"税抜価格", class:"col-sm-3" %>
+        <%= f.text_field :price, class:"col-sm-5", placeholder:"1000" %>円
       </div>
       <!--任意実装-->
       <!--<div>-->
       <!--  < %= f.label :"販売ステータス" %>-->
       <!--</div>-->
-      <div>
-        <%= f.submit "変更を保存" %>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5"></div>
+          <div class="col-sm-2">
+            <%= f.submit "変更を保存", class: "btn btn-success btn-lg pull-right" %>
+          </div>
+          <div class="col-sm-5"></div>
+        </div>
       </div>
     </div>
   <% end %>
