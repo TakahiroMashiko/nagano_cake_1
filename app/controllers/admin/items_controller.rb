@@ -26,8 +26,8 @@ class Admin::ItemsController < ApplicationController
   end
 
   def update
+    @item = Item.find(params[:id])
     if @item.update(item_params)
-      flash[:success] = "商品内容を変更しました"
       redirect_to admin_item_path(@item)
     else
       render :edit
