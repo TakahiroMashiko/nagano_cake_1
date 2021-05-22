@@ -10,4 +10,8 @@ module ApplicationHelper
 		customer.last_name_kana + customer.first_name_kana
 	end
 
+  # Tax-included calculation
+  def tax_price(price)
+    (price * 1.1).floor
+  end
 end
