@@ -36,6 +36,6 @@ class Admin::ItemsController < ApplicationController
   # Strong parameters
   private
   def item_params
-    params.require(:item).permit(:genre_id, :image_id, :name, :introduction, :price, :is_active)
+    params.require(:item).permit(:genre_id, :image_id, :name, :introduction, :price, :is_active, :image)
   end
 end
