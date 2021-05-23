@@ -31,5 +31,10 @@ Rails.application.routes.draw do
     get 'customers/update'
     get 'customers/withdrawal'
     get 'customers/quit'
+    get 'cart_items/index'
+    get 'cart_items/update'
+    get 'cart_items/delete'
+    get 'cart_items/all_delete'
+    get 'cart_items/create'
   end
 end
