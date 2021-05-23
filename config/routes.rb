@@ -6,14 +6,14 @@ Rails.application.routes.draw do
     resource :home, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
     get  'top'=>'homes#top'
     resources :customers, only: [:index, :show, :edit, :update]
-    resources :items, only: [:index, :new, :create, :show, :edit, :update,]
+    resources :items, only: [:index, :new, :create, :show, :edit, :update]
     resources :orders, only: [:index, :show, :update]
     resource :order_details, only: [:update]
     # 任意実装 resources :genres, only: [:index, :create, :edit, :update, :show]
   end
 
-  # Display the top screen of the application with "/"
-  get '/', to: 'customer/homes#top' #'new_admin_session_path'
+  # Display the top screen of the application with '/'
+  get '/', to: 'customer/homes#top'
   # root path
   root :to => 'customer/homes#top'
 
@@ -23,8 +23,7 @@ Rails.application.routes.draw do
     resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
     get 'top' => 'customer/homes/top'
     get 'about' => 'customer/homes/about'
-    get 'items/index'
-    get 'items/show'
+    resources :items, only: [:index, :show]
     get 'customers/show'
     get 'customers/edit'
     get 'customers/update'
