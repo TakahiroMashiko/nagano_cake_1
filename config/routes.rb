@@ -42,5 +42,10 @@ Rails.application.routes.draw do
     get 'orders/create'
     get 'orders/index'
     get 'orders/show'
+    get 'shipping_addresses/index'
+    get 'shipping_addresses/edit'
+    get 'shipping_addresses/create'
+    get 'shipping_addresses/update'
+    get 'shipping_addresses/destroy'
   end
 end
