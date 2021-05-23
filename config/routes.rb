@@ -36,12 +36,12 @@ Rails.application.routes.draw do
         # all_deleteは後から実装
       end
     end
-    get 'orders/new'
-    get 'orders/confirm'
-    get 'orders/thanks'
-    get 'orders/create'
-    get 'orders/index'
-    get 'orders/show'
+    resources :orders,only: [:new, :index, :show, :create] do
+      collection do
+        post 'confirm'
+        get 'thanks'
+      end
+    end
     get 'shipping_addresses/index'
     get 'shipping_addresses/edit'
     get 'shipping_addresses/create'
