@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :customer do
+    get 'items/index'
+    get 'items/show'
+  end
   # admin
   devise_for :admins
   namespace :admin do
