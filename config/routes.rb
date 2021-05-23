@@ -36,5 +36,11 @@ Rails.application.routes.draw do
     get 'cart_items/delete'
     get 'cart_items/all_delete'
     get 'cart_items/create'
+    get 'orders/new'
+    get 'orders/confirm'
+    get 'orders/thanks'
+    get 'orders/create'
+    get 'orders/index'
+    get 'orders/show'
   end
 end
