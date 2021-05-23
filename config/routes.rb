@@ -26,5 +26,10 @@ Rails.application.routes.draw do
     get 'homes/about'
     get 'items/index'
     get 'items/show'
+    get 'customers/show'
+    get 'customers/edit'
+    get 'customers/update'
+    get 'customers/withdrawal'
+    get 'customers/quit'
   end
 end
