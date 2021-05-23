@@ -30,22 +30,18 @@ Rails.application.routes.draw do
         patch 'quit'
       end
     end
-    resources :cart_items,only: [:index, :update, :create] do
+    resources :cart_items, only: [:index, :update, :create] do
       collection do
         delete 'delete'
         # all_deleteは後から実装
       end
     end
-    resources :orders,only: [:new, :index, :show, :create] do
+    resources :orders, only: [:new, :index, :show, :create] do
       collection do
         post 'confirm'
         get 'thanks'
       end
     end
-    get 'shipping_addresses/index'
-    get 'shipping_addresses/edit'
-    get 'shipping_addresses/create'
-    get 'shipping_addresses/update'
-    get 'shipping_addresses/destroy'
+    resources :shipping_addresses, only: [:index, :edit, :create, :update, :destroy]
   end
 end
