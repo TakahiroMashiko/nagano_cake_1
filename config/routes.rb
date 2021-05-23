@@ -18,9 +18,9 @@ Rails.application.routes.draw do
   root :to => 'customer/homes#top'
   # customer
   get '/about', to: 'customer/homes#about'
+  resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
   devise_for :customers
-  namespace :customer do
-    resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
+  scope module: :customer do
     resources :items, only: [:index, :show]
     resources :customers, only: [:show, :edit, :update] do
       collection do
