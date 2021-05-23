@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   devise_for :customers
   namespace :customer do
     resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
-    get 'top' => 'homes/top'
+    get 'top' => 'customer/homes/top'
     get 'homes/about'
     get 'items/index'
     get 'items/show'
