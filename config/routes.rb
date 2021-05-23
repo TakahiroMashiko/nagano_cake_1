@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   namespace :customer do
     resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
     get 'top' => 'customer/homes/top'
-    get 'homes/about'
+    get 'about' => 'customer/homes/about'
     get 'items/index'
     get 'items/show'
     get 'customers/show'
