@@ -12,7 +12,7 @@
         <div class="col-xs-4">
           購入者
         </div>
-        <div>
+        <div class="col-xs-8">
           <%= @order.name %>
         </div>
       </div>
@@ -21,7 +21,7 @@
         <div class="col-xs-4">
           注文日
         </div>
-        <div>
+        <div class="col-xs-8">
           <%= @order.created_at %>
         </div>
       </div>
@@ -30,7 +30,7 @@
         <div class="col-xs-4">
           配送先
         </div>
-        <div>
+        <div class="col-xs-8">
           <!--発送先郵便番号、住所、宛名を組み合わせて表示させたいが実装方法が不明のため後ほど実装する-->
           <!--配送先 < %= shipping_postal_code + shipping_address + shipping_name %>-->
         </div>
@@ -40,7 +40,7 @@
         <div class="col-xs-4">
           支払方法
         </div>
-        <div>
+        <div class="col-xs-8">
           <%= @order.payment_method %>
         </div>
       </div>
