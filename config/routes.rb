@@ -16,13 +16,11 @@ Rails.application.routes.draw do
   get '/', to: 'customer/homes#top'
   # root path
   root :to => 'customer/homes#top'
-
   # customer
+  get '/about', to: 'customer/homes#about'
   devise_for :customers
   namespace :customer do
     resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
-    get 'top' => 'customer/homes/top'
-    get 'about' => 'customer/homes/about'
     resources :items, only: [:index, :show]
     resources :customers, only: [:show, :edit, :update] do
       collection do
