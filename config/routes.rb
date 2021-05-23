@@ -12,12 +12,10 @@ Rails.application.routes.draw do
     # 任意実装 resources :genres, only: [:index, :create, :edit, :update, :show]
   end
 
-  # customer側の実装完了後に「root 'customer/homes#top'」に修正する
   # Display the top screen of the application with "/"
-  get '/', to: 'admin/homes#top' #'new_admin_session_path'
-  # customer側の実装完了後に「root :to => 'customer/homes#top'」に修正する
+  get '/', to: 'customer/homes#top' #'new_admin_session_path'
   # root path
-  root :to => 'admin/homes#top'
+  root :to => 'customer/homes#top'
 
   # customer
   devise_for :customers
