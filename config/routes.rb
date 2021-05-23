@@ -24,11 +24,12 @@ Rails.application.routes.draw do
     get 'top' => 'customer/homes/top'
     get 'about' => 'customer/homes/about'
     resources :items, only: [:index, :show]
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/update'
-    get 'customers/withdrawal'
-    get 'customers/quit'
+    resources :customers, only: [:show, :edit, :update] do
+      collection do
+        get 'withdrawal'
+        patch 'quit'
+      end
+    end
     get 'cart_items/index'
     get 'cart_items/update'
     get 'cart_items/delete'
