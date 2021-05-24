@@ -13,28 +13,32 @@
     </div>
   </div>
 </div>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<br>
+<!--form_with-->
+<%= form_with model: @customer, url: session_path(resource_name), local: true do |f| %>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <%= f.label :"メールアドレス", class: "col-sm-2 control-label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-5 form-control-static rounded" %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "customers/shared/links" %>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <%= f.label :"パスワード", class: "col-sm-2 control-label" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "col-sm-5 form-control-static rounded" %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <%= f.submit "ログイン", class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>
+  </div>
+ <% end %>
