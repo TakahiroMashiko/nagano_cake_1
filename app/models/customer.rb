@@ -7,4 +7,5 @@ class Customer < ApplicationRecord
   validates :last_name, :first_name, :last_name_kana, :first_name_kana, :address, :telephone_number,
     presence: true
   validates :postal_code, length: {is: 7}, numericality: { only_integer: true }
+  validates :telephone_number, numericality: { only_integer: true }
 end
