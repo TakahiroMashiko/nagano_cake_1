@@ -50,17 +50,13 @@
         <%= f.label :"パスワード(確認用)", class: "col-sm-3 control-label" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-sm-3 form-control-static rounded password_confirmation" %>
       </div>
+      <div class="actions col-xs-12">
+        <%= f.label :"　", class: "col-sm-3 control-label" %>
+        <%= f.submit "新規登録", class: "col-sm-2 btn btn-success" %>
+      </div>
     </div>
   </form>
 </div>
-  <br>
-  <div class="container">
-    <div class="row">
-      <div class="col text-center">
-        <%= f.submit "新規登録", class: "btn btn-success" %>
-      </div>
-    </div>
-  </div>
 <% end %>
 <br>
 <div class="container">
