@@ -8,4 +8,6 @@ class Customer < ApplicationRecord
     presence: true
   validates :postal_code, length: {is: 7}, numericality: { only_integer: true }
   validates :telephone_number, numericality: { only_integer: true }
+  validates :last_name_kana, :first_name_kana,
+    format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/ }
 end
