@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   # customer
   get '/about', to: 'customer/homes#about'
   resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
-  devise_for :customers
+  devise_for :customers, :controllers => {
+    :sessions => 'customers/sessions',
+    :registrations => 'customers/registrations',
+    :passwords => 'customers/passwords'
+  }
   scope module: :customer do
     resources :items, only: [:index, :show]
     resources :customers, only: [:show, :edit, :update] do
