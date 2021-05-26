@@ -26,12 +26,14 @@ Rails.application.routes.draw do
   }
   scope module: :customer do
     resources :items, only: [:index, :show]
-    resources :customers, only: [:show, :edit, :update] do
+    resource :customer, only: [:show]
+    resources :customers, only: [:edit, :update] do
       collection do
         get 'withdrawal'
         patch 'quit'
       end
     end
+
     resources :cart_items, only: [:index, :update, :create] do
       collection do
         delete 'delete'
