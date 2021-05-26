@@ -14,8 +14,8 @@
   </div>
 </div>
 <br>
-<!--form_with-->
-<%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
+<!--form_for-->
+<%= form_for(resource, as: resource_name, url: customer_session_path(resource_name)) do |f| %>
   <div class="container">
     <div class="row">
       <div class="col text-center">

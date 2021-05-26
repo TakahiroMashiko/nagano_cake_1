@@ -10,7 +10,7 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def createF
+  # def create
   #   super
   # end
 
