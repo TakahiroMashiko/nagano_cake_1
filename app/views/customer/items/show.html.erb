@@ -18,7 +18,9 @@
       </h4>
       <br>
       <% if customer_signed_in? %>
+        <%= form_with model: @cart_item, local: true do |f| %>
 
+        <% end %>
       <% end %>
     </div>
   </div>
