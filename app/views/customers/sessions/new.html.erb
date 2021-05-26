@@ -15,12 +15,12 @@
 </div>
 <br>
 <!--form_with-->
-<%= form_with model: @customer, url: session_path(resource_name), local: true do |f| %>
+<%= form_with model: @customer, url: customer_session_path, local: true do |f| %>
   <div class="container">
     <div class="row">
       <div class="col text-center">
         <%= f.label :"メールアドレス", class: "col-sm-2 control-label" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-sm-5 form-control-static rounded" %>
+        <%= f.text_field :email, autofocus: true, autocomplete: "email", class: "col-sm-5 form-control-static rounded" %>
       </div>
     </div>
   </div>
