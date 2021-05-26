@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # Change login path
   def after_sign_in_path_for(resource)
     if customer_signed_in?
-      customer_path
+      customers_path
     else
       admin_top_path
     end
