@@ -16,7 +16,7 @@
             <div class ="item-image">
               <%= link_to item_path(item) do %>
                 <p class="card-img-top">
-
+                  <%= attachment_image_tag item, :image, width: "100%", format: "jpg", fallback: "no_image.jpg" %>
                 </p>
               <% end %>
             </div>
