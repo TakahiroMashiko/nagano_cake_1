@@ -15,7 +15,7 @@
         <% if customer_signed_in? %>
           <li>
             <button type="button" class="btn btn-outline-secondary mx-4">
-              <%= link_to "マイページ", customer_path(current_customer), class: 'text-dark' %>
+              <%= link_to "マイページ", customers_path, class: 'text-dark' %>
             </button>
           </li>
           <li>
