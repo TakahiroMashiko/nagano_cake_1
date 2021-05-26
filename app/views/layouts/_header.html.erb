@@ -13,6 +13,9 @@
         <ul class="navbar-nav ml-auto">
         <!--When the customer is logged in-->
         <% if customer_signed_in? %>
+          <li  class="nav-text my-2 text-center">
+            ようこそ、<%= current_customer.last_name %>さん！
+          </li>
           <li>
             <button type="button" class="btn btn-outline-secondary mx-4">
               <%= link_to "マイページ", customers_path, class: 'text-dark' %>
