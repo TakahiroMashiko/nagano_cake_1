@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="px-sm-0 col-sm-5">
       <p class="image mt-5 mb-5">
-
+        <%= attachment_image_tag @item, :image, width: "100%", format: "jpg", fallback: "no_image.jpg" %>
       </p>
     </div>
   </div>
