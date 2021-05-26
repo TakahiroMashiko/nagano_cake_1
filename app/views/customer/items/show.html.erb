@@ -17,7 +17,9 @@
       　¥<%= ((@item.price*1.10).to_i).to_s(:delimited) %>（税込）
       </h4>
       <br>
+      <% if customer_signed_in? %>
 
+      <% end %>
     </div>
   </div>
 </div>
