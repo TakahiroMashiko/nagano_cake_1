@@ -37,6 +37,7 @@ class Customer::CartItemsController < ApplicationController
       @cart_items.number += params[:cart_item][:number].to_i
       @cart_items.save
         flash[:success] = "カートに追加しました"
+        redirect_to cart_items_path
     else
 
     end
