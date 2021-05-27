@@ -26,6 +26,7 @@ class Customer::CartItemsController < ApplicationController
 
   def all_delete
     @cart_items = current_customer.cart_items.all
+    @cart_items.destroy_all
   end
 
   def create
