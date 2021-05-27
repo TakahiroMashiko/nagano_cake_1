@@ -13,6 +13,7 @@
     </div>
     <div class="col-sm-3 px-sm-0 text-right">
       <% unless cart_item.blank? %>
+      <!--削除されず、画面が遷移しない-->
         <%= link_to "カートを空にする", cart_items_all_delete_path, class: "btn btn-danger mt-5", id: "all-delete", method: :delete, remote: true, data: { confirm: '削除しますか？' } %>
       <% end %>
     </div>
