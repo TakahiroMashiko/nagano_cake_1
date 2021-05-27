@@ -36,6 +36,7 @@ class Customer::CartItemsController < ApplicationController
     if @cart_items.present?
       @cart_items.number += params[:cart_item][:number].to_i
       @cart_items.save
+        flash[:success] = "カートに追加しました"
     else
 
     end
