@@ -32,6 +32,7 @@ class Customer::CartItemsController < ApplicationController
   end
 
   def create
+    @cart_items = CartItem.find_by(customer_id: current_customer.id, item_id: params[:cart_item][:item_id])
   end
 
   # Strong parameters
