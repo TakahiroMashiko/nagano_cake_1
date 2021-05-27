@@ -11,6 +11,7 @@ class Customer::CartItemsController < ApplicationController
     if @cart_item.update(cart_item_params)
       render :index
     else
+      flash[:danger] = "正しい個数を入力してください"
       render :index
     end
   end
