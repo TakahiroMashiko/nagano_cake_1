@@ -19,6 +19,6 @@ class Customer::CartItemsController < ApplicationController
   # Strong parameters
   private
   def cart_item_param
-
+    params.require(:cart_item).permit(:item_id, :amount)
   end
 end
