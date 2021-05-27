@@ -15,4 +15,6 @@ class Customer::CartItemsController < ApplicationController
 
   def create
   end
+  
+  private
 end
