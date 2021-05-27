@@ -72,16 +72,16 @@
       <div class="col-sm-8">
         <%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
       </div>
-    </div>
-    <div class="col-sm-3 px-sm-0">
-      <table class="table table-bordered">
-        <tr>
-          <td class="table-light border-dark bg-light" style="width:50%">合計金額</th>
-          <td class="border-dark" style="width:50%">
-            <%= total_amount.to_s(:delimited) %>
-          </td>
-        </tr>
-      </table>
+      <div class="col-sm-3 px-sm-0">
+        <table class="table table-bordered">
+          <tr>
+            <td class="table-light border-dark bg-light" style="width:50%">合計金額</th>
+            <td class="border-dark" style="width:50%">
+              <%= total_amount.to_s(:delimited) %>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
