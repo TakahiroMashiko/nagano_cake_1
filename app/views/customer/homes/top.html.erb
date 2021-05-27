@@ -1,29 +1,23 @@
 <body>
   <main class="mx-auto" style="width: 460px;">
-	<div class="card">
-    <img class="card-img" src="assets/customer_top.jpg" alt="main caption" width="460" height="320">
-    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-      <p class="text-body bg-light">
-        <span>ようこそ、ながのCakeへ！</span><br>
-    		このサイトは、ケーキ販売のECサイトになります。<br>
-    		会員でない方も商品の閲覧はできますが、<br>
-    		購入には会員登録が必要になります。<br>
-    	</p>
+  	<div class="card">
+      <img class="card-img" src="assets/customer_top.jpg" alt="main caption" width="460" height="320">
+      <div class="card-img-overlay d-flex align-items-center justify-content-center">
+        <p class="text-body bg-light">
+          <span>ようこそ、ながのCakeへ！</span><br>
+      		このサイトは、ケーキ販売のECサイトになります。<br>
+      		会員でない方も商品の閲覧はできますが、<br>
+      		購入には会員登録が必要になります。<br>
+      	</p>
+      </div>
     </div>
-  </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 position: relative;">
-          <h2>新着商品</h2>
-            <!--Display 4 items in order from the last registered item-->
-            <% @items.last(4). each do |item| %>
-
-            <% end %>
-        </div>
-        <div class="pull-right">
-          <br><%= link_to "すべての商品を見る >", @items_path, class: "pull-right" %>
-			  </div>
-			</div>
-    </div>
+    <h2 class = "font-weight-bold mt-4 mb-4">
+      新着商品
+    </h2>
+    <!--Display 4 items in order from the last registered item-->
+    <%= render 'customer/items/new_items', items: @items %>
+    <div class="text-right">
+      <%= link_to "すべての商品を見る >", items_path %>
+  	</div>
   </main>
 </body>
