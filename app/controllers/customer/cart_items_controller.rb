@@ -21,6 +21,7 @@ class Customer::CartItemsController < ApplicationController
     @cart_items = CartItem.where(customer_id: current_customer.id).order("created_at DESC")
     @cart_item.destroy
       flash[:success] = "選択した商品を削除しました"
+      render :index
   end
 
   def all_delete
