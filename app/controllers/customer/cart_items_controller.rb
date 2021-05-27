@@ -33,6 +33,7 @@ class Customer::CartItemsController < ApplicationController
 
   def create
     @cart_items = CartItem.find_by(customer_id: current_customer.id, item_id: params[:cart_item][:item_id])
+    if @cart_items.present?
   end
 
   # Strong parameters
