@@ -50,7 +50,9 @@
                   <%= (cart_item.price_including_tax).to_s(:delimited) %>
                 </td>
                 <td class="align-middle border-dark">
+                  <%= form_with model: cart_item, remote: true do |f| %>
 
+                  <% end %>
                 </td>
                 <td class="align-middle border-dark">
 
