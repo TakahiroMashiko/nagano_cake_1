@@ -17,6 +17,7 @@ class Customer::CartItemsController < ApplicationController
 
   def delete
     @cart_item = CartItem.find(params[:id])
+    @cart_items = CartItem.where(customer_id: current_customer.id).order("created_at DESC")
   end
 
   def all_delete
