@@ -41,7 +41,11 @@ class Customer::CartItemsController < ApplicationController
     else
       @cart_item = CartItem.new(cart_item_params)
       @cart_item.customer_id = current_customer.id
+      if @cart_item.save
 
+      else
+
+      end
     end
   end
 
