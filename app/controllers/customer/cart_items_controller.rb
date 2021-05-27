@@ -35,6 +35,7 @@ class Customer::CartItemsController < ApplicationController
     @cart_items = CartItem.find_by(customer_id: current_customer.id, item_id: params[:cart_item][:item_id])
     if @cart_items.present?
       @cart_items.number += params[:cart_item][:number].to_i
+      @cart_items.save
     else
 
     end
