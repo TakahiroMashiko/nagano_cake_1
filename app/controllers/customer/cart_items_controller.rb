@@ -15,6 +15,10 @@ class Customer::CartItemsController < ApplicationController
 
   def create
   end
-  
+
+  # Strong parameters
   private
+  def cart_item_param
+
+  end
 end
