@@ -28,6 +28,7 @@ class Customer::CartItemsController < ApplicationController
     @cart_items = current_customer.cart_items.all
     @cart_items.destroy_all
       flash[:success] = "カートが空になりました"
+      render :index
   end
 
   def create
