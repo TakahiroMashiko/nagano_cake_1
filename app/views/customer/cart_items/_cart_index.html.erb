@@ -44,6 +44,7 @@
               <tr>
                 <td class="align-middle border-dark">
                   <%= attachment_image_tag cart_item.item, :image, width: "25%", format: "jpg", fallback: "no_image.jpg" %>
+                  <strong><%= cart_item.item.name %></strong>
                 </td>
               </tr>
           </tbody>
