@@ -21,6 +21,7 @@ class Customer::CustomersController < ApplicationController
 
   def withdrawal
     @customer = current_customer
+    @customer.update(is_active: true)
   end
 
   def quit
