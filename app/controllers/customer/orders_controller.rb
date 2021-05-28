@@ -13,7 +13,8 @@ class Customer::OrdersController < ApplicationController
         @order.postal_code = current_customer.postal_code
         @order.address = current_customer.address
       else
-
+        flash[:danger] = "新しいお届け先が入力されていません"
+        redirect_to new_order_path
       end
   end
 
