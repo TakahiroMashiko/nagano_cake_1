@@ -7,6 +7,11 @@ class Customer::CustomersController < ApplicationController
 
   def edit
     @customer = current_customer
+    if @customer.update(customer_params)
+
+    else
+
+    end
   end
 
   def update
