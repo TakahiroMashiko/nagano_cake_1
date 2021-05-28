@@ -5,16 +5,19 @@ class Customer::OrdersController < ApplicationController
   end
 
   def confirm
+    @order = Order.new(order_params)
   end
 
   def thanks
   end
 
   def create
+    @order = Order.new(order_params)
   end
 
   def index
     @orders = current_customer.orders
+    @orders = Order.where(customer_id: current_customer.id).order("created_at DESC")
   end
 
   def show
