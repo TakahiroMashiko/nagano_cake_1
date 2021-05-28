@@ -43,7 +43,7 @@ class Customer::OrdersController < ApplicationController
     if @order.save
       flash[:success] = "ご注文が確定しました"
       current_customer.cart_items.each do |cart_item|
-
+        order_item = OrderItem.new
       end
     end
   end
