@@ -44,6 +44,8 @@ class Customer::OrdersController < ApplicationController
       flash[:success] = "ご注文が確定しました"
       current_customer.cart_items.each do |cart_item|
         order_item = OrderItem.new
+        order_item.amount = cart_item.amount
+
       end
     end
   end
