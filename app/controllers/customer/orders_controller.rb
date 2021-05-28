@@ -8,20 +8,27 @@ class Customer::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @cart_item = current_customer.cart_items
 
-      if params[:order][:addresses] == "address"
-        @order.name = full_name(customer)
-        @order.postal_code = current_customer.postal_code
-        @order.address = current_customer.address
+    if params[:order][:addresses] == "address"
+      @order.name = full_name(customer)
+      @order.postal_code = current_customer.postal_code
+      @order.address = current_customer.address
 
-      elsif params[:order][:addresses] == "addresses"
-        addresses = Address.find(params[:order][:addresses_id])
-        @order.name = addresses.name
-        @order.postal_code = addresses.postal_code
-        @order.address = addresses.address
+    elsif params[:order][:addresses] == "addresses"
+      addresses = Address.find(params[:order][:addresses_id])
+      @order.name = addresses.name
+      @order.postal_code = addresses.postal_code
+      @order.address = addresses.address
+    elsif params[:order][:addresses] == "new_address"
+      if params[:order][:postal_code] != "" && params[:order][:address] != "" && params[:order][:name] != ""
+        @order.name = params[:order][:name]
+        @order.postal_code = params[:order][:postal_code]
+        @order.address = params[:order][:address]
+        @addresses = "1"
       else
-        flash[:danger] = "新しいお届け先が入力されていません"
-        redirect_to new_order_path
+      flash[:danger] = "新しいお届け先が入力されていません"
+      redirect_to new_order_path
       end
+    end
   end
 
   def thanks
