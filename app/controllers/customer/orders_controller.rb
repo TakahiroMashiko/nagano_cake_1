@@ -30,6 +30,7 @@ class Customer::OrdersController < ApplicationController
       end
 
       current_customer.cart_items.destroy_all
+      redirect_to orders_thanks_path
     end
   end
 
