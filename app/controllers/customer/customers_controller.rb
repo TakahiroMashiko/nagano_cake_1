@@ -8,7 +8,7 @@ class Customer::CustomersController < ApplicationController
   def edit
     @customer = current_customer
     if @customer.update(customer_params)
-
+      flash[:success] = "会員情報を更新しました"
     else
 
     end
@@ -24,6 +24,7 @@ class Customer::CustomersController < ApplicationController
 
   def quit
     @customer = current_customer
+    flash[:success] = "退会処理しました。ご利用いただきありがとうございました。"
   end
 
   # Strong parameters
