@@ -20,4 +20,7 @@ class Customer::CustomersController < ApplicationController
   def quit
     @customer = current_customer
   end
+
+  private
+
 end
