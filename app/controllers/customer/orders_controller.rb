@@ -50,6 +50,10 @@ class Customer::OrdersController < ApplicationController
         order_item.item_id = cart_item.item_id
         order_item.save
       end
+
+      if params[:order][:addresses] == "1"
+
+      end
     end
   end
 
