@@ -9,7 +9,7 @@ class Customer::OrdersController < ApplicationController
     @cart_item = current_customer.cart_items
 
       if params[:order][:addresses] == "address"
-
+        @order.name = full_name(customer)
       else
 
       end
