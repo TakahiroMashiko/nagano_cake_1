@@ -26,6 +26,6 @@ class Customer::OrdersController < ApplicationController
   end
 
   def address_params
-
+    params.require(:order).permit(:name, :postal_code, :address)
   end
 end
