@@ -10,6 +10,7 @@ class Customer::OrdersController < ApplicationController
 
       if params[:order][:addresses] == "address"
         @order.name = full_name(customer)
+        @order.postal_code = current_customer.postal_code
       else
 
       end
