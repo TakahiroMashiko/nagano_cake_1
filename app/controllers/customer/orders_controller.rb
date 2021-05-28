@@ -45,7 +45,7 @@ class Customer::OrdersController < ApplicationController
       current_customer.cart_items.each do |cart_item|
         order_item = OrderItem.new
         order_item.amount = cart_item.amount
-
+        order_item.price = cart_item.item.price
       end
     end
   end
