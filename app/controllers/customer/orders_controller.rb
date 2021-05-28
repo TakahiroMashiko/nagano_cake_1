@@ -33,6 +33,7 @@ class Customer::OrdersController < ApplicationController
       redirect_to orders_thanks_path
     else
       @order = Order.new
+      @addresses = current_customer.addresses
     end
   end
 
