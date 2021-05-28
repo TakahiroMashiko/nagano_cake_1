@@ -7,6 +7,12 @@ class Customer::OrdersController < ApplicationController
   def confirm
     @order = Order.new(order_params)
     @cart_item = current_customer.cart_items
+
+      if params[:order][:addresses] == "address"
+
+      else
+
+      end
   end
 
   def thanks
