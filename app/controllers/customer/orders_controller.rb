@@ -34,6 +34,7 @@ class Customer::OrdersController < ApplicationController
     else
       @order = Order.new
       @addresses = current_customer.addresses
+      render 'new'
     end
   end
 
