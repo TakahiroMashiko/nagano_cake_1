@@ -22,6 +22,6 @@ class Customer::OrdersController < ApplicationController
   # Strong parameters
   private
   def order_params
-
+    params.require(:order).permit(:payment_method, :postal_code, :address, :name, :total_payment )
   end
 end
