@@ -21,13 +21,13 @@ class Customer::CustomersController < ApplicationController
 
   def withdrawal
     @customer = current_customer
-    @customer.update(is_active: true)
-    reset_session
   end
 
   def quit
     @customer = current_customer
     flash[:success] = "退会処理しました。ご利用いただきありがとうございました。"
+    @customer.update(is_active: true)
+    reset_session
   end
 
   # Strong parameters
