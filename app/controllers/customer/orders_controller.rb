@@ -28,6 +28,8 @@ class Customer::OrdersController < ApplicationController
       flash[:danger] = "新しいお届け先が入力されていません"
       redirect_to new_order_path
       end
+
+      current_customer.cart_items.destroy_all
     end
   end
 
