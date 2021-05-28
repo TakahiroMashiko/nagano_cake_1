@@ -9,6 +9,7 @@ class Customer::CustomersController < ApplicationController
     @customer = current_customer
     if @customer.update(customer_params)
       flash[:success] = "会員情報を更新しました"
+      redirect_to customers_path
     else
 
     end
