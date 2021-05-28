@@ -31,6 +31,8 @@ class Customer::OrdersController < ApplicationController
 
       current_customer.cart_items.destroy_all
       redirect_to orders_thanks_path
+    else
+      @order = Order.new
     end
   end
 
