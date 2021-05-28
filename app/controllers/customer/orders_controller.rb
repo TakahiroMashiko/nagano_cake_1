@@ -47,6 +47,7 @@ class Customer::OrdersController < ApplicationController
         order_item.amount = cart_item.amount
         order_item.price = cart_item.item.price
         order_item.order_id = @order.id
+        order_item.item_id = cart_item.item_id
       end
     end
   end
