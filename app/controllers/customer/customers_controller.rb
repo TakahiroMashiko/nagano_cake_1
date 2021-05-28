@@ -25,9 +25,10 @@ class Customer::CustomersController < ApplicationController
 
   def quit
     @customer = current_customer
-    flash[:success] = "退会処理しました。ご利用いただきありがとうございました。"
     @customer.update(is_active: true)
     reset_session
+    flash[:success] = "退会処理しました。ご利用いただきありがとうございました。"
+    redirect_to root_path
   end
 
   # Strong parameters
