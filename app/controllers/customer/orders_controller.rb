@@ -52,7 +52,7 @@ class Customer::OrdersController < ApplicationController
       end
 
       if params[:order][:addresses] == "1"
-
+        current_customer.addresses.create(address_params)
       end
     end
   end
