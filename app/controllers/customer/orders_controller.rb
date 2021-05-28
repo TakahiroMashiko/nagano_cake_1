@@ -41,7 +41,7 @@ class Customer::OrdersController < ApplicationController
     @order.status = 0
 
     if @order.save
-
+      flash[:success] = "ご注文が確定しました"
     end
   end
 
