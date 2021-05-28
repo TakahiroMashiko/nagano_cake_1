@@ -19,5 +19,9 @@ class Customer::OrdersController < ApplicationController
   def show
   end
 
+  # Strong parameters
   private
+  def order_params
+
+  end
 end
