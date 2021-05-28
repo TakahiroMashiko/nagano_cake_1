@@ -37,6 +37,7 @@ class Customer::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
+    @order.shipping_cost = 800
   end
 
   def index
