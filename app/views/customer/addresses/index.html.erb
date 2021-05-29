@@ -10,7 +10,7 @@
       </div>
       <%= form_with model: @address, url: addresses_path, local: true do |f| %>
       <div class="field">
-        <%= f.label "郵便番号（ハイフンなし）", class: "col-3" %>
+        <%= f.label "郵便番号(ハイフンなし)", class: "col-3" %>
         <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: "0000000", class: "col-3 " %>
       </div>
 
