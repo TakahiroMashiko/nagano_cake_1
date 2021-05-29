@@ -34,6 +34,7 @@
         <%= f.collection_select(:addresses_id, @addresses, :id, :shipping_address) %>
       </div>
     <% end %>
+    <%= f.radio_button :addresses, "new_address" %>
     </div>
   </div>
 </div>
