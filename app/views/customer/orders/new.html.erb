@@ -18,6 +18,15 @@
         <%= f.radio_button :payment_method, :"銀行振込" %>
         <span>銀行振込</span>
       </div>
+      <strong>お届け先</strong>
+      <div class="col-xs-10 radio ml-3">
+        <%= f.radio_button :addresses, "address", checked: true %>
+        <span>ご自身の住所</span>
+        <br>
+      〒<%= "#{current_customer.postal_code}" %> <%= "#{current_customer.address}" %>
+        <br>
+        <%= "#{current_customer.last_name}""#{current_customer.first_name}" %>
+      </div>
     <% end %>
     </div>
   </div>
