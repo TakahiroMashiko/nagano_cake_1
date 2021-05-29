@@ -25,15 +25,15 @@
           <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: "0000000", class: "col-sm-3 mt-1 form-control-static rounded" %>
         </div>
         <div class="field">
-          <%= f.label "メールアドレス", class: "col-sm-3" %>
-          <%= f.text_field :email, autocomplete: "email", placeholder: "example@example.com", class: "col-sm-3 mt-1 form-control-static rounded" %>
-        </div>
-        <div class="field">
           <%= f.label "住所", class: "col-sm-3" %>
           <%= f.text_field :address, autocomplete: "address", placeholder: "東京都渋谷区代々木神園町0-0", class: "col-sm-6 mt-1 form-control-static rounded" %>
         </div>
         <div class="field">
-
+          <%= f.label "電話番号", class: "col-sm-3" %>
+          <%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: "0000000000", class: "col-sm-3 mt-1 form-control-static rounded" %>
+        <div class="field">
+          <%= f.label "メールアドレス", class: "col-sm-3" %>
+          <%= f.text_field :email, autocomplete: "email", placeholder: "example@example.com", class: "col-sm-3 mt-1 form-control-static rounded" %>
         </div>
         <div class="actions btn-toolbar text-center mt-3">
 
