@@ -66,7 +66,10 @@
             </th>
             <th class="info">
               <h5 class="font-weight-bold">お届け先</h5>
-              <td></td>
+              <td>
+                <h5><%= @order.postal_code %> <%= @order.address %></h5>
+                <h5><%= @order.name %></h5>
+              </td>
             </th>
           </tr>
         </table>
