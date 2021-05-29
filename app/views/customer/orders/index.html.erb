@@ -32,8 +32,11 @@
               <br>
               <%= order.name %>
             </td>
-            <td>
-
+            <td class = "border-dark align-middle">
+              <% order.order_items.each do |order_item| %>
+                <%= order_item.item.name %>
+                <br>
+              <% end %>
             </td>
             <td>
 
