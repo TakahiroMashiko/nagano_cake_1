@@ -13,4 +13,8 @@ class Customer < ApplicationRecord
   validates :telephone_number, numericality: { only_integer: true }
   validates :last_name_kana, :first_name_kana,
     format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/ }
+
+  def active_for_authentication?
+    super && (self.is_active == false)
+  end
 end
