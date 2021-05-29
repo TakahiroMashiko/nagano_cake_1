@@ -11,7 +11,7 @@
       <%= form_with model: @address, url: addresses_path, local: true do |f| %>
       <div class="field">
         <%= f.label "郵便番号（ハイフンなし）", class: "col-3" %>
-        <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: "0000000", class: "col-3" %>
+        <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: "0000000", class: "col-3 " %>
       </div>
 
       <div class="field">
@@ -32,10 +32,10 @@
       <table class="table table-bordered mt-5">
         <thead class="table-light">
           <tr>
-            <th class="border-dark" style="width: 10%">郵便番号</th>
-            <th class="border-dark" style="width: 40%">住所</th>
-            <th class="border-dark" style="width: 25%">宛名</th>
-            <th class="border-dark" style="width: 25%"></th>
+            <th class="border-dark bg-light" style="width: 10%">郵便番号</th>
+            <th class="border-dark bg-light" style="width: 40%">住所</th>
+            <th class="border-dark bg-light" style="width: 25%">宛名</th>
+            <th class="border-dark bg-light" style="width: 25%"></th>
           </tr>
         </thead>
         <tbody id="address">
