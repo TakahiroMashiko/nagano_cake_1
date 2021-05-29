@@ -9,7 +9,11 @@
         </div>
       </div>
     <%= form_with model: @order, url: orders_confirm_path, local: true do |f| %>
-
+      <strong>支払方法</strong>
+      <div class="col-xs-10 radio ml-3">
+        <%= f.radio_button :payment_method, :"クレジットカード", checked: true %>
+        <span>クレジットカード</span>
+      </div>
     <% end %>
     </div>
   </div>
