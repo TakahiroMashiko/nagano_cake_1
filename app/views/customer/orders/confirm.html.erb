@@ -20,7 +20,7 @@
           </thead>
           <tbody>
             <% @subtotal = 0 %>
-            <% @cart_items.each do |cart| %>
+            <% @cart_item.each do |cart| %>
               <tr>
                 <td class="border-dark">
                   <%= attachment_image_tag(cart.item, :image, size: "72x50", fallback: "no_image.jpg") %>
@@ -34,7 +34,7 @@
                 </td>
                 <td class="border-dark">
                   <%= ((cart.item.price*1.10).to_i*(cart.amount).to_i).to_s(:delimited) %>
-                  <% @subtotal+=  ((cart.item.price*1.10).to_i*(cart.number).to_i) %>
+                  <% @subtotal+=  ((cart.item.price*1.10).to_i*(cart.amount).to_i) %>
                 </td>
               </tr>
             <% end %>
