@@ -19,19 +19,30 @@ Rails.application.routes.draw do
   # customer
   get '/about', to: 'customer/homes#about'
   resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
-  devise_for :customers, only: [:sign_in, :sign_out, :session], :controllers => {
-    :sessions => 'customers/sessions',
-    :registrations => 'customers/registrations',
-    :passwords => 'customers/passwords'
-  }
+
+  ## 削除する
+  # Devise's customers/registrations#edit
+  # devise_scope :customer do
+  #   get 'customer/edit', to: 'customers/registrations#edit'
+  # end
+  # devise_for :customers, only: [:sign_in, :sign_out, :session, :registrations], :controllers => {
+  #   :sessions => 'customers/sessions',
+  #   :registrations => 'customers/registrations',
+  #   :passwords => 'customers/passwords'
+  # }
+
+  devise_for :customers, skip: :all
   devise_scope :customer do
-    get 'customer/edit', to: 'customers/registrations#edit'
+    get 'customers/sign_up' => 'devise/registrations#new', as: :new_customer_registration
+    post 'customers' => 'devise/registrations#create', as: :customer_registration
+    get 'customers/sign_in' => 'devise/sessions#new', as: :new_customer_session
+    post 'customers' => 'devise/sessions#create', as: :customer_session
+    delete '/customers/sign_out' => 'devise/sessions#destroy', as: :destroy_customer_session
   end
 
   scope module: :customer do
     resources :items, only: [:index, :show]
-    get 'customers/edit' => 'customers#edit'
-    resource :customers, only: [:show, :update] do
+    resource :customers, only: [:edit, :show, :update] do
       collection do
         get 'withdrawal'
         patch 'quit'
@@ -46,6 +57,6 @@ Rails.application.routes.draw do
         get 'thanks'
       end
     end
-    resources :shipping_addresses, only: [:index, :edit, :create, :update, :destroy]
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
   end
 end
