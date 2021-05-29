@@ -47,7 +47,10 @@
           <table class="table table-bordered">
             <tbody>
               <tr>
-
+                <td class="table-light border-dark">商品合計</td>
+                <td class="border-dark">
+                  <%= (@order.total_payment).to_s(:delimited) %>
+                </td>
               </tr>
             </tbody>
           </table>
