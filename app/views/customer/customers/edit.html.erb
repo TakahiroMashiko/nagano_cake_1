@@ -11,7 +11,9 @@
       </div>
       <%= form_with model: @customer, url: customers_path ,local: true do |f| %>
         <div class="field">
-
+          <%= f.label "氏名", class: "col-sm-3" %>
+          <%= f.text_field :last_name, autocomplete: "last_name", placeholder: "令和", class: "col-sm-3 mt-1 form-control-static rounded" %>
+          <%= f.text_field :first_name, autocomplete: "first_name", placeholder: "道子", class: "col-sm-3 mt-1 form-control-static rounded" %>
         </div>
         <div class="field">
 
