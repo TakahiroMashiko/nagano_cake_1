@@ -77,6 +77,7 @@
       <div class="text-center my-5">
         <%= form_with model: @order, url: orders_path, local: true do |f| %>
           <%= f.hidden_field :postal_code %>
+          <%= f.hidden_field :address %>
         <% end %>
       </div>
     </div>
