@@ -34,7 +34,8 @@
                 <%= cart.amount %>
               </td>
               <td class="border-dark">
-
+                <%= ((cart.item.price*1.10).to_i*(cart.amount).to_i).to_s(:delimited) %>
+                <% @subtotal+=  ((cart.item.price*1.10).to_i*(cart.number).to_i) %>
               </td>
             </tr>
           <% end %>
