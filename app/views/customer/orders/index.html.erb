@@ -32,14 +32,16 @@
               <br>
               <%= order.name %>
             </td>
-            <td class = "border-dark align-middle">
+            <td class="border-dark align-middle">
               <% order.order_items.each do |order_item| %>
                 <%= order_item.item.name %>
                 <br>
               <% end %>
             </td>
             <td>
-
+              <td class="border-dark align-middle text-center">
+                <%= (order.total_payment + order.shipping_fee).to_s(:delimited) %>
+              </td>
             </td>
             <td>
 
