@@ -43,11 +43,13 @@
                 <%= (order.total_payment + order.shipping_fee).to_s(:delimited) %>
               </td>
             </td>
-            <td class = "border-dark align-middle text-center">
+            <td class="border-dark align-middle text-center">
               <%= order.status %>
             </td>
             <td>
-
+            <td class="border-dark align-middle text-center">
+              <%= link_to "表示する", order_path(order), class: "btn btn-success" %>
+            </td>
             </td>
           </tr>
           <% end %>
