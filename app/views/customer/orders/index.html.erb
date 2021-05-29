@@ -43,8 +43,8 @@
                 <%= (order.total_payment + order.shipping_fee).to_s(:delimited) %>
               </td>
             </td>
-            <td>
-
+            <td class = "border-dark align-middle text-center">
+              <%= order.status %>
             </td>
             <td>
 
