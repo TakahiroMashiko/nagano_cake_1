@@ -81,6 +81,7 @@
           <%= f.hidden_field :name %>
           <%= f.hidden_field :payment_method %>
           <%= f.hidden_field :total_payment, :value => @subtotal %>
+          <%= f.hidden_field :addresses, value: @addresses %>
         <% end %>
       </div>
     </div>
