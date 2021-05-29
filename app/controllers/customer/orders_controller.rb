@@ -47,18 +47,18 @@ class Customer::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
     @order.shipping_cost = 800
-    @order.status = 0
+    # @order.status = 0
 
     if @order.save
       flash[:success] = "ご注文が確定しました"
-      current_customer.cart_items.each do |cart_item|
-        order_item = OrderItem.new
-        order_item.amount = cart_item.amount
-        order_item.price = cart_item.item.price
-        order_item.order_id = @order.id
-        order_item.item_id = cart_item.item_id
-        order_item.save
-      end
+      # current_customer.cart_items.each do |cart_item|
+      #   # order_item = OrderItem.new
+      #   # order_item.amount = cart_item.amount
+      #   # order_item.price = cart_item.item.price
+      #   # order_item.order_id = @order.id
+      #   # order_item.item_id = cart_item.item_id
+      #   # order_item.save
+      # end
 
       if params[:order][:addresses] == "1"
         current_customer.addresses.create(address_params)
@@ -73,7 +73,7 @@ class Customer::OrdersController < ApplicationController
 
   def show
     @order=Order.find(params[:id])
-    @order_items = @order.order_items
+    # @order_items = @order.order_items
   end
 
   # Strong parameters
