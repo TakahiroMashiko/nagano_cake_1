@@ -29,7 +29,15 @@
               </tr>
               <tr>
                 <td class="table-light border-dark">支払方法</td>
-                <td class="border-dark"><%= @order.payment_method %></td>
+                <td class="border-dark">
+                  <%= @order.payment_method %>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-light border-dark">ステータス</td>
+                <td class="border-dark">
+                  <%= @order.status %>
+                </td>
               </tr>
             </tbody>
           </table>
