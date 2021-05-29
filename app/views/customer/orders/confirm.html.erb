@@ -28,7 +28,7 @@
                 <strong class="ml-2"><%= cart.item.name %></strong>
               </td>
               <td class="border-dark">
-
+                <%= ((cart.item.price*1.10).to_i).to_s(:delimited) %>
               </td>
               <td class="border-dark">
 
