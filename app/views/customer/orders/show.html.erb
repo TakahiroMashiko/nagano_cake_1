@@ -52,6 +52,12 @@
                   <%= (@order.total_payment).to_s(:delimited) %>
                 </td>
               </tr>
+              <tr>
+                <td class="table-light border-dark">配送料</td>
+                <td class="border-dark">
+                  <%= (@order.shipping_cost).to_s(:delimited) %>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
