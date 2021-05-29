@@ -78,7 +78,25 @@
             <th class="border-darkbg-light", style="width: 10%">小計</th>
           </tr>
         </thead>
-
+        <tbody>
+          <% @order.order_items.each do |order_item| %>
+          <tr>
+            <td class="border-dark">
+              <%= order_item.item.name %>
+            </td>
+            <td class="border-dark">
+              <%= order_item.tax_price %>
+            </td>
+            <td class="border-dark">
+              <%= order_item.amount %>
+            </td>
+            <td class="border-dark">
+              <%= order_item.amount * order_item.tax_price %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
       </div>
     </div>
   </div>
