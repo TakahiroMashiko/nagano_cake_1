@@ -33,8 +33,13 @@
         <br>
         <%= f.collection_select(:addresses_id, @addresses, :id, :shipping_address) %>
       </div>
-    <% end %>
     <%= f.radio_button :addresses, "new_address" %>
+      <div class="field form-group col-md-11 row">
+        <%= f.label :"郵便番号（ハイフンなし）", class: "control-label col-mb-3"  %>
+        <%= f.text_field :postal_code, placeholder: "0000000", class: "col-mb-3 form-control-static postal_code" %>
+      </div>
+
+    <% end %>
     </div>
   </div>
 </div>
