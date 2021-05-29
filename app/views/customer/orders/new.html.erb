@@ -14,6 +14,10 @@
         <%= f.radio_button :payment_method, :"クレジットカード", checked: true %>
         <span>クレジットカード</span>
       </div>
+      <div class="col-xs-10 radio ml-3 mb-3">
+        <%= f.radio_button :payment_method, :"銀行振込" %>
+        <span>銀行振込</span>
+      </div>
     <% end %>
     </div>
   </div>
