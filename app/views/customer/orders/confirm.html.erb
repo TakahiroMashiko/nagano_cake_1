@@ -48,7 +48,7 @@
             </tr>
             <tr>
               <th class="table-light border-dark">商品合計</th>
-              <%= ((cart.item.price*1.10).to_i).to_s(:delimited) %>
+              <td class="border-dark"><%= @subtotal.to_s(:delimited) %></td>
             </tr>
             <tr>
               <th class="table-light border-dark">請求金額</th>
