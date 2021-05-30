@@ -45,16 +45,16 @@
     <div class="field">
       <p>
         会員ステータス　<% if @customer.is_active == true %>
-          <p>退会</p>
-        <% else %>
           <p>有効</p>
+        <% else %>
+          <p>無効</p>
         <% end %>
       </p>
     </div>
 
     <div class="action">
-      <%= link_to "編集する",edit_admin_customer_path(@customer), class="btn btn-success edit_shipping_addres_#{@customer.id}" %>
-      <%= link_to "注文履歴一覧を見る",current_index_admin_order_path(@customer), class: "btn btn-info" %>
+      <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-success" %>
+      <%= link_to "注文履歴一覧を見る", admin_top_path, class: "btn btn-info" %>
     </div>
   </div>
 </div>
