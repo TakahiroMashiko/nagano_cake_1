@@ -24,7 +24,9 @@
               <%= customer.id %>
             </td>
             <td class="text-left", style="width: 40%">
+            <%= link_to admin_customer_path(customer.id), class: "text-dark" do %>
               <%= full_name(customer) %>
+            <% end %>
             </td>
             <td class="text-left", style="width: 40%">
               <%= customer.email %>
