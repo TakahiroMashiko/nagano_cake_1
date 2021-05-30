@@ -12,10 +12,10 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th class="table-light border-dark">商品名</th>
-              <th class="table-light border-dark">単価(税込)</th>
-              <th class="table-light border-dark">数量</th>
-              <th class="table-light border-dark">小計</th>
+              <th class="border-dark bg-light">商品名</th>
+              <th class="border-dark bg-light">単価(税込)</th>
+              <th class="border-dark bg-light">数量</th>
+              <th class="border-dark bg-light">小計</th>
             </tr>
           </thead>
           <tbody>
@@ -43,15 +43,15 @@
         <div class="col-sm-3 ml-5">
           <table class="table table-bordered">
             <tr>
-              <th class="table-light border-dark">送料</th>
+              <th class="border-dark bg-light">送料</th>
               <td class="border-dark">800</td>
             </tr>
             <tr>
-              <th class="table-light border-dark">商品合計</th>
+              <th class="border-dark bg-light">商品合計</th>
               <td class="border-dark"><%= @subtotal.to_s(:delimited) %></td>
             </tr>
             <tr>
-              <th class="table-light border-dark">請求金額</th>
+              <th class="border-dark bg-light">請求金額</th>
               <td class="border-dark"><%= (@subtotal + 800).to_s(:delimited) %></td>
             </tr>
           </table>

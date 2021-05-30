@@ -15,7 +15,8 @@
             <th class="border-dark bg-light">配送先</th>
             <th class="border-dark bg-light">注文商品</th>
             <th class="border-dark bg-light">支払金額</th>
-            <th class="border-dark bg-light">ステータス</th>
+            <!--任意実装-->
+            <!--<th class="border-dark bg-light">ステータス</th>-->
             <th class="border-dark bg-light">注文詳細</th>
           </tr>
         </thead>
@@ -32,22 +33,24 @@
               <br>
               <%= order.name %>
             </td>
+
             <td class="border-dark align-middle">
-              <% order.order_items.each do |order_item| %>
-                <%= order_item.item.name %>
+              <% order.order_details.each do |order_detail| %>
+                <%= order_detail.item.name %>
                 <br>
               <% end %>
             </td>
-            <td>
-              <td class="border-dark align-middle text-center">
-                <%= (order.total_payment + order.shipping_cost).to_s(:delimited) %>
-              </td>
-            </td>
             <td class="border-dark align-middle text-center">
-              <%= order.status %>
+              <%= (order.total_payment + order.shipping_cost).to_s(:delimited) %>
             </td>
+            <!--任意実装-->
+            <!--<td class="border-dark align-middle text-center">-->
+            <!--  < %= order.status %>-->
+            <!--</td>-->
+
+            <!--遷移先がおかしい-->
             <td class="border-dark align-middle text-center">
-              <%= link_to "表示する", order_path(order), class: "btn btn-success" %>
+              <%= link_to "表示する", order_path(order.id), class: "btn btn-primary" %>
             </td>
           </tr>
           <% end %>
