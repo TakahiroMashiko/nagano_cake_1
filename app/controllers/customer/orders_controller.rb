@@ -30,9 +30,6 @@ class Customer::OrdersController < ApplicationController
       flash[:danger] = "新しいお届け先が入力されていません"
       redirect_to new_order_path
       end
-
-      current_customer.cart_items.destroy_all
-      redirect_to orders_thanks_path
     else
       @order = Order.new
       @addresses = current_customer.addresses
@@ -51,29 +48,33 @@ class Customer::OrdersController < ApplicationController
 
     if @order.save
       flash[:success] = "ご注文が確定しました"
-      # current_customer.cart_items.each do |cart_item|
-      #   # order_item = OrderItem.new
-      #   # order_item.amount = cart_item.amount
-      #   # order_item.price = cart_item.item.price
-      #   # order_item.order_id = @order.id
-      #   # order_item.item_id = cart_item.item_id
-      #   # order_item.save
-      # end
-
-      if params[:order][:addresses] == "1"
-        current_customer.addresses.create(address_params)
+      @cartitems = current_customer.cart_items
+      if @cartitems.count >= 1
+        @cartitems.each do |cartitem|
+          @order_detail = OrderDetail.new(
+            order_id: @order.id,
+            item_id: cartitem.item.id,
+            amount: cartitem.amount,
+            price: cartitem.item.price,
+          )
+          @order_detail.save
+        end
+        @cartitems.destroy_all
+        redirect_to thanks_orders_path
+      else
+        redirect_to new_order_path
       end
     end
   end
 
   def index
-    @orders = current_customer.orders
+    @orders = current_customer.orders.all
     @orders = Order.where(customer_id: current_customer.id).order("created_at DESC")
   end
 
   def show
-    @order=Order.find(params[:id])
-    # @order_items = @order.order_items
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details
   end
 
   # Strong parameters
