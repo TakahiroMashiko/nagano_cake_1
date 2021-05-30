@@ -12,7 +12,7 @@ module ApplicationHelper
 
 	# Customer's full address
 	def full_address(key)
-	  "#{key.shipping_postal_code} #{key.shipping_address} #{key.shipping_name}"
+	  "#{key.postal_code} #{key.address} #{key.name}"
 	end
 
   # Tax-included calculation
@@ -23,14 +23,5 @@ module ApplicationHelper
   # Sub price calculation
   def sub_price(sub)
     (tax_price(sub.item.price) * sub.amount)
-  end
-
-  # Total price calculation
-  def total_price(totals)
-    price = 0
-    totals.each do |total|
-      price +=  sub_price(total)
-    end
-    return price
   end
 end
