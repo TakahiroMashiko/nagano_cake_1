@@ -23,7 +23,7 @@ class Customer::AddressesController < ApplicationController
     @address = Address.find(params[:id])
     if @address.update(address_params)
       flash[:success] = "配送先情報を変更しました"
-      redirect_to addresses_path(@address)
+      redirect_to addresses_path
     else
       render 'edit'
     end
