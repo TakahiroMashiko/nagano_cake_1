@@ -8,13 +8,13 @@
 <br>
 <div class="container">
   <div class="row">
-    <table class="table table-hover table-condensed bg-light">
+    <table class="table table-hover table-condensed">
       <thead>
         <tr class="info">
-          <th>会員ID</th>
-          <th>氏名</th>
-          <th>メールアドレス</th>
-          <th>ステータス</th>
+          <th class="bg-light">会員ID</th>
+          <th class="bg-light"><u>氏名</u></th>
+          <th class="bg-light">メールアドレス</th>
+          <th class="bg-light">ステータス</th>
         </tr>
       </thead>
       <tbody>
@@ -33,9 +33,9 @@
             </td>
             <td class="text-left", style="width: 10%">
               <% if customer.is_active == true %>
-                <p>有効</p>
+                <p class="text-success">有効</p>
               <% else %>
-                <p>無効</p>
+                <p class="text-secondary">無効</p>
               <% end %>
             </td>
           </tr>
