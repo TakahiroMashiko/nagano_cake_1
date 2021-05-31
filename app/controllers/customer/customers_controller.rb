@@ -25,7 +25,7 @@ class Customer::CustomersController < ApplicationController
 
   def quit
     @customer = current_customer
-    @customer.update(is_active: true)
+    @customer.update(is_active: false)
     reset_session
     flash[:success] = "退会処理しました。ご利用いただきありがとうございました。"
     redirect_to root_path
