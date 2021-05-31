@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   # admin
   devise_for :admins
   namespace :admin do
+    root :to =>'homes#top'
     resource :home, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
-    get  'top'=>'homes#top'
-    resources :customers, only: [:index, :show, :edit, :update]
-    resources :items, only: [:index, :new, :create, :show, :edit, :update]
-    resources :orders, only: [:index, :show, :update]
+    resources :customers, only: [:index, :edit, :show, :update]
+    resources :items, except: [:destroy]
+    resources :orders, only: [:show, :update]
     resource :order_details, only: [:update]
     # 任意実装 resources :genres, only: [:index, :create, :edit, :update, :show]
   end
@@ -19,17 +19,6 @@ Rails.application.routes.draw do
   # customer
   get '/about', to: 'customer/homes#about'
   resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
-
-  ## 削除する
-  # Devise's customers/registrations#edit
-  # devise_scope :customer do
-  #   get 'customer/edit', to: 'customers/registrations#edit'
-  # end
-  # devise_for :customers, only: [:sign_in, :sign_out, :session, :registrations], :controllers => {
-  #   :sessions => 'customers/sessions',
-  #   :registrations => 'customers/registrations',
-  #   :passwords => 'customers/passwords'
-  # }
 
   devise_for :customers, skip: :all
   devise_scope :customer do
