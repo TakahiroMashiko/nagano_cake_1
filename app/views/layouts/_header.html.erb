@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
     <% if admin_signed_in? %>
-      <%= link_to " NaganoCake", admin_top_path, class: "fas fa-birthday-cake text-body" %>
+      <%= link_to " NaganoCake", admin_root_path, class: "fas fa-birthday-cake text-body" %>
     <% else %>
       <%= link_to " NaganoCake", root_path, class: "fas fa-birthday-cake text-body" %>
     <% end %>
@@ -50,7 +50,7 @@
           </li>
           <li>
             <button type="button" class="btn btn-outline-secondary mx-4">
-              <%= link_to "注文履歴一覧", admin_top_path, class: 'text-dark' %>
+              <%= link_to "注文履歴一覧", admin_root_path, class: 'text-dark' %>
             </button>
           </li>
           <!--任意実装-->
