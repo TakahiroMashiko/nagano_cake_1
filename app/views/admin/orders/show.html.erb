@@ -11,29 +11,29 @@
       <table class="table table-borderless">
         <tbody>
         <tr>
-          <td>購入者</td>
+          <th>購入者</th>
           <td><u><%= link_to @order.name, admin_customer_path, class: "text-dark" %></u></td>
         </tr>
         <tr>
-          <td>注文日</td>
+          <th>注文日</th>
           <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
         </tr>
         <tr>
-          <td>配送先</td>
+          <th>配送先</th>
           <td><%= full_address(@order) %></td>
         </tr>
         <tr>
-          <td>支払方法</td>
+          <th>支払方法</th>
           <td><%= @order.payment_method %></td>
         </tr>
         <!--任意実装-->
         <!--注文ステータス-->
         </tbody>
       </table>
-      <div class="col-xs-9">
-        <table class="table table-hover table-condensed">
+      <div class="d-flex">
+        <table class="table table-hover table-condensed mr-3">
           <thead>
-            <tr class="info">
+            <tr class="table-hover table-inverse table-light">
               <th class="bg-light">商品名</th>
               <th class="bg-light">単価（税込）</th>
               <th class="bg-light">数量</th>
@@ -65,9 +65,8 @@
             <% end %>
           </tbody>
         </table>
-      </div>
-      <div class="col-xs-3">
-        <table class="table table-hover table-bordered table-condensed">
+        <table class="table table-borderless col-3">
+          <tbody>
           <tr>
             <th>商品合計</th>
             <td>
@@ -86,6 +85,7 @@
               ¥<%= (@order.total_payment + @order.shipping_cost ).to_s(:delimited) %>
             </td>
           </tr>
+          </tbody>
         </table>
       </div>
     </div>
