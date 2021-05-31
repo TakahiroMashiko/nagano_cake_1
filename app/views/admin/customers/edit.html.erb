@@ -12,41 +12,44 @@
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <%= f.label :"会員ID" %>
-            <%= f.label :"#{@customer.id}" %>
+            <td style="width: 25%">会員ID</td>
+            <td style="width: 25%"><%= f.label :"#{@customer.id}" %></td>
           </tr>
           <tr>
-            <%= f.label "氏名" %>
-            <%= f.text_field :last_name %>
-            <%= f.text_field :first_name %>
+            <td>氏名</td>
+            <td><%= f.text_field :last_name, class: "rounded" %></td>
+            <td><%= f.text_field :first_name, class: "rounded" %></td>
           </tr>
           <tr>
-            <%= f.label "フリガナ" %>
-            <%= f.text_field :last_name_kana %>
-            <%= f.text_field :first_name_kana %>
+            <td>フリガナ</td>
+            <td><%= f.text_field :last_name_kana, class: "rounded" %></td>
+            <td><%= f.text_field :first_name_kana, class: "rounded" %></td>
           </tr>
           <tr>
-            <%= f.label "郵便番号" %>
-            <%= f.text_field :postal_code %>
+            <td>郵便番号</td>
+            <td><%= f.text_field :postal_code, class: "rounded" %></td>
           </tr>
           <tr>
-            <%= f.label "住所" %>
-            <%= f.text_field :address %>
+            <td>住所</td>
+            <td colspan="3"><%= f.text_field :address, class: "rounded col-9" %></td>
           </tr>
           <tr>
-            <%= f.label "電話番号" %>
-            <%= f.text_field :telephone_number %>
+            <td>電話番号</td>
+            <td><%= f.text_field :telephone_number, class: "rounded" %></td>
           </tr>
           <tr>
-            <%= f.label "会員ステータス" %>
-            <%= f.radio_button :is_active, true %>
-            <%= f.label :is_active, "有効", {value: :true} %>
-            <%= f.radio_button :is_active, false %>
-            <%= f.label :is_active, "退会", {value: :false} %>
+            <td>会員ステータス</td>
+            <td>
+              <%= f.radio_button :is_active, true %>
+              <%= f.label :is_active, "有効", {value: :true} %>
+              <%= f.radio_button :is_active, false %>
+              <%= f.label :is_active, "退会", {value: :false} %>
+            </td>
           </tr>
-        <div class="actions  col-xs-9 col-xs-offset-4">
-          <%= f.submit "変更を保存", class: "btn btn-success" %>
-        </div>
+          <tr>
+            <td></td>
+            <td><%= f.submit "変更を保存", class: "btn btn-success" %></td>
+          </tr>
         </tbody>
       </table>
       <% end %>
