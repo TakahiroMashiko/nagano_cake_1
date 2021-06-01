@@ -1,11 +1,6 @@
-# 長野ケーキ　ECサイト
-
-DMM WEBCAMPのチーム開発（本講座では1人）で作成するアプリケーションです。
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-## 説明
+# 長野ケーキ　ECサイト 概要
+* アプリケーション名 nagano_cake(長野ケーキ)
+* **DMM WEBCAMPのチーム開発（本講座では1人）で作成するアプリケーションです。**
 
 ## ER図
 
@@ -41,5 +36,5 @@ https://github.com/TakahiroMashiko
 https://github.com/TakahiroMashiko
 
 # 作成期間
-2020/5/3~2020/5/30予定  
-※作成中
+2020/5/3~2020/5/30
+※テスト中
