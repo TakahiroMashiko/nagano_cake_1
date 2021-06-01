@@ -12,7 +12,7 @@
         <tbody>
         <tr>
           <th>購入者</th>
-          <td><u><%= link_to @order.name, admin_customer_path(@order.customer.id), class: "text-dark" %></u></td>
+          <td><u><%= link_to @order.customer.last_name +  @order.customer.first_name, admin_customer_path(@order.customer.id), class: "text-dark" %></u></td>
         </tr>
         <tr>
           <th>注文日</th>
