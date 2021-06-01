@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   # Change login path
   def after_sign_in_path_for(resource)
     if customer_signed_in?
-      customers_path
+      flash[:success] = "ログインしました"
+      root_path
     else
       admin_root_path
     end
