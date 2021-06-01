@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
 
   # Change loggout path
   def after_sign_out_path_for(resource)
-    if customer_signed_in?
+    if resource == :customer
+      flash[:success] = "ログアウトしました"
       root_path
     else
       new_admin_session_path
