@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
 
   # Change loggout path
   def after_sign_out_path_for(resource)
-    root_path
+    if customer_signed_in?
+      root_path
+    else
+      new_admin_session_path
+    end
   end
 end
