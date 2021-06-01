@@ -3,6 +3,7 @@
 * **DMM WEBCAMPのチーム開発（本講座では1人）で作成するアプリケーションです。**
 
 ## ER図
+![【修正版】dwcpro_naganocake_er_answersheet](https://user-images.githubusercontent.com/80663962/120292014-dc64b000-c2fe-11eb-95ab-b574e7e0455c.png)
 
 ## アプリケーション詳細設計図
 * 顧客側
