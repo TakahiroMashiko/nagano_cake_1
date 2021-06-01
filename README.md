@@ -6,22 +6,18 @@
 ![【修正版】dwcpro_naganocake_er_answersheet](https://user-images.githubusercontent.com/80663962/120292014-dc64b000-c2fe-11eb-95ab-b574e7e0455c.png)
 
 ## アプリケーション詳細設計図
-* 顧客側
-
-* 管理者側
-
-## 機能
+![image](https://user-images.githubusercontent.com/80663962/120293260-08ccfc00-c300-11eb-828c-03cb4f2774c8.png)
 
 # 開発環境
 Ruby on Rails
 
 ## インストール
-
 ```
 $ git clone https://github.com/TakahiroMashiko/nagano_cake
 $ cd nagano_cake
-$ sh setup.sh
-$ ~do anything~
+$ bundle install
+$ rails db:seed
+$ rails s
 ```
 
 # 推薦環境
