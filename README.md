@@ -6,7 +6,7 @@
 ![【修正版】dwcpro_naganocake_er_answersheet](https://user-images.githubusercontent.com/80663962/120292014-dc64b000-c2fe-11eb-95ab-b574e7e0455c.png)
 
 ## アプリケーション詳細設計図
-<img width="550" alt="アプリケーション詳細設計図_update" src="https://user-images.githubusercontent.com/80663962/120295696-564a6880-c302-11eb-86dc-a4d05c0cab44.PNG">
+<img width="685" alt="アプリケーション詳細設計図_update" src="https://user-images.githubusercontent.com/80663962/120295847-83971680-c302-11eb-8ccc-6ce2918f5dfe.PNG">
 
 # 開発環境、使用言語
 * Ruby on Rails(フレームワーク)
