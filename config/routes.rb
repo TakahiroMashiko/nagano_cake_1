@@ -12,12 +12,6 @@ Rails.application.routes.draw do
     # 任意実装 resources :genres, only: [:index, :create, :edit, :update, :show]
   end
 
-  # Display the top screen of the application with '/'
-  get '/', to: 'customer/homes#top'
-  # root path
-  root :to => 'customer/homes#top'
-  # customer
-  get '/about', to: 'customer/homes#about'
   resources :homes, :except => [:index, :create, :new, :edit, :show, :update, :destroy]
 
   devise_for :customers, skip: :all
@@ -30,6 +24,8 @@ Rails.application.routes.draw do
   end
 
   scope module: :customer do
+    root to: 'homes#top'
+    get '/about' => 'homes#about', as: 'about'
     resources :items, only: [:index, :show]
     resource :customers, only: [:edit, :show, :update] do
       collection do
