@@ -8,8 +8,14 @@
 ## アプリケーション詳細設計図
 ![image](https://user-images.githubusercontent.com/80663962/120293260-08ccfc00-c300-11eb-828c-03cb4f2774c8.png)
 
-# 開発環境
-Ruby on Rails
+# 開発環境、使用言語
+* Ruby on Rails(フレームワーク)
+* HTML & SCSS
+* Ruby
+* JavaScript
+
+# 推薦環境
+Ruby 2.5 以降 Rails 5.2 以降
 
 ## インストール
 ```
@@ -19,9 +25,6 @@ $ bundle install
 $ rails db:seed
 $ rails s
 ```
-
-# 推薦環境
-Ruby 2.5 以降 Rails 5.2 以降
 
 # 開発者
 ## チーム名
