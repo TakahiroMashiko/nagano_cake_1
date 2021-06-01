@@ -1,35 +1,30 @@
-# 長野ケーキ　ECサイト
-
-DMM WEBCAMPのチーム開発（本講座では1人）で作成するアプリケーションです。
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-## 説明
+# 長野ケーキ　ECサイト 概要
+* アプリケーション名 nagano_cake(長野ケーキ)
+* **DMM WEBCAMPのチーム開発（本講座では1人）で作成するアプリケーションです。**
 
 ## ER図
+![【修正版】dwcpro_naganocake_er_answersheet](https://user-images.githubusercontent.com/80663962/120292014-dc64b000-c2fe-11eb-95ab-b574e7e0455c.png)
 
 ## アプリケーション詳細設計図
-* 顧客側
+<img width="685" alt="アプリケーション詳細設計図_update" src="https://user-images.githubusercontent.com/80663962/120295847-83971680-c302-11eb-8ccc-6ce2918f5dfe.PNG">
 
-* 管理者側
-
-## 機能
-
-# 開発環境
-Ruby on Rails
-
-## インストール
-
-```
-$ git clone https://github.com/TakahiroMashiko/nagano_cake
-$ cd nagano_cake
-$ sh setup.sh
-$ ~do anything~
-```
+# 開発環境、使用言語
+* Ruby on Rails(フレームワーク)
+* HTML & SCSS
+* Ruby
+* JavaScript
 
 # 推薦環境
 Ruby 2.5 以降 Rails 5.2 以降
+
+## インストール
+```
+$ git clone https://github.com/TakahiroMashiko/nagano_cake
+$ cd nagano_cake
+$ bundle install
+$ rails db:seed
+$ rails s
+```
 
 # 開発者
 ## チーム名
@@ -41,5 +36,5 @@ https://github.com/TakahiroMashiko
 https://github.com/TakahiroMashiko
 
 # 作成期間
-2020/5/3~2020/5/30予定  
-※作成中
+2020/5/3~2020/5/30
+※テスト中
