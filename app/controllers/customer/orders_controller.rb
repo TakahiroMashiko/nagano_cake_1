@@ -59,6 +59,9 @@ class Customer::OrdersController < ApplicationController
           )
           @order_detail.save
         end
+        if params[:order][:addresses] == "1"
+          current_customer.addresses.create(address_params)
+        end
         @cartitems.destroy_all
         redirect_to thanks_orders_path
       else
