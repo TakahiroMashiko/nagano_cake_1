@@ -15,6 +15,6 @@ class Customer < ApplicationRecord
     format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/ }
 
   def active_for_authentication?
-    super && (self.is_active == true)
+    super && (self.is_active == false)
   end
 end
